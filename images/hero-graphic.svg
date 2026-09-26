@@ -1,0 +1,64 @@
+<svg width="600" height="400" viewBox="0 0 600 400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#dbeafe;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ede9fe;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="accent1" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#8b5cf6;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="accent2" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" style="stop-color:#60a5fa;stop-opacity:0.7" />
+      <stop offset="100%" style="stop-color:#a78bfa;stop-opacity:0.7" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="600" height="400" fill="url(#bg1)"/>
+  
+  <!-- Abstract Speech Bubbles / Shapes -->
+  <circle cx="480" cy="80" r="60" fill="#3b82f6" opacity="0.1"/>
+  <circle cx="120" cy="320" r="80" fill="#8b5cf6" opacity="0.1"/>
+  
+  <!-- Main Microphone Illustration -->
+  <g transform="translate(250, 120)">
+    <!-- Large Microphone -->
+    <ellipse cx="50" cy="40" rx="35" ry="45" fill="url(#accent1)"/>
+    <rect x="40" y="85" width="20" height="60" fill="#334155" rx="2"/>
+    <rect x="20" y="145" width="60" height="5" fill="#334155" rx="2"/>
+    <rect x="35" y="140" width="30" height="5" fill="#334155" rx="2"/>
+    
+    <!-- Mic Grid Lines -->
+    <line x1="30" y1="30" x2="70" y2="30" stroke="white" stroke-width="2" opacity="0.3"/>
+    <line x1="30" y1="40" x2="70" y2="40" stroke="white" stroke-width="2" opacity="0.3"/>
+    <line x1="30" y1="50" x2="70" y2="50" stroke="white" stroke-width="2" opacity="0.3"/>
+    <line x1="30" y1="60" x2="70" y2="60" stroke="white" stroke-width="2" opacity="0.3"/>
+  </g>
+  
+  <!-- Sound Waves -->
+  <g opacity="0.6">
+    <path d="M 200 200 Q 180 180, 180 160" stroke="url(#accent1)" stroke-width="4" stroke-linecap="round" fill="none"/>
+    <path d="M 190 210 Q 165 190, 165 160" stroke="url(#accent1)" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.7"/>
+    <path d="M 180 220 Q 150 200, 150 160" stroke="url(#accent1)" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.5"/>
+    
+    <path d="M 400 200 Q 420 180, 420 160" stroke="url(#accent1)" stroke-width="4" stroke-linecap="round" fill="none"/>
+    <path d="M 410 210 Q 435 190, 435 160" stroke="url(#accent1)" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.7"/>
+    <path d="M 420 220 Q 450 200, 450 160" stroke="url(#accent1)" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.5"/>
+  </g>
+  
+  <!-- Floating Text Elements (representing speech) -->
+  <g opacity="0.4">
+    <rect x="80" y="100" width="100" height="8" rx="4" fill="#3b82f6"/>
+    <rect x="90" y="115" width="70" height="8" rx="4" fill="#8b5cf6"/>
+    
+    <rect x="420" y="280" width="120" height="8" rx="4" fill="#8b5cf6"/>
+    <rect x="430" y="295" width="80" height="8" rx="4" fill="#3b82f6"/>
+  </g>
+  
+  <!-- Decorative Dots -->
+  <circle cx="100" cy="180" r="5" fill="#3b82f6" opacity="0.5"/>
+  <circle cx="500" cy="320" r="5" fill="#8b5cf6" opacity="0.5"/>
+  <circle cx="520" cy="200" r="7" fill="#60a5fa" opacity="0.4"/>
+  <circle cx="80" cy="250" r="6" fill="#a78bfa" opacity="0.4"/>
+</svg>

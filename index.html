@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Essential Meta Tags -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Professional speeches for any occasion - weddings, corporate events, milestones, and memorials. Written in your desired tone: serious, humorous, emotional, or pure banter.">
+  <meta name="keywords" content="speech writing, best man speech, wedding speech, corporate speech, professional speechwriter, custom speeches">
+  <meta name="author" content="SuperSpeech">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://superspeech.biz/">
+  <meta property="og:title" content="SuperSpeech - Professional Speeches for Any Occasion">
+  <meta property="og:description" content="Expert speechwriting services for weddings, corporate events, and special occasions. Choose your tone and let us craft the perfect words.">
+  <meta property="og:image" content="https://superspeech.biz/images/hero-graphic.svg">
+  
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://superspeech.biz/">
+  <meta name="twitter:title" content="SuperSpeech - Professional Speeches for Any Occasion">
+  <meta name="twitter:description" content="Expert speechwriting services for weddings, corporate events, and special occasions.">
+  <meta name="twitter:image" content="https://superspeech.biz/images/hero-graphic.svg">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="/images/logo.svg">
+  
+  <title>SuperSpeech - Professional Speeches for Any Occasion</title>
+  
+  <!-- Critical CSS (inline for performance) -->
+  <style>
+    /* CSS Reset */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    
+    html {
+      font-size: 16px;
+      -webkit-text-size-adjust: 100%;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, 
+                   Ubuntu, Cantarell, 'Helvetica Neue', Arial, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background: #fff;
+    }
+    
+    img, picture, video, canvas, svg {
+      display: block;
+      max-width: 100%;
+      height: auto;
+    }
+    
+    button, input, textarea, select {
+      font: inherit;
+    }
+    
+    /* Remove default button styling */
+    button {
+      border: none;
+      background: none;
+      cursor: pointer;
+    }
+    
+    /* Accessibility: Don't remove focus outline */
+    :focus-visible {
+      outline: 2px solid #007bff;
+      outline-offset: 2px;
+    }
+  </style>
+  
+  <!-- Main Stylesheets (preload for performance) -->
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/superspeech.css">
+  
+  <!-- IE11 HTML5 shim (only loaded in IE) -->
+  <!--[if lt IE 9]>
+    <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <![endif]-->
+  
+  <!-- Polyfills for older browsers -->
+  <script>
+    // Load polyfills only if needed
+    if (!window.Promise || !window.fetch || !Array.prototype.includes) {
+      document.write('<script src="https://polyfill.io/v3/polyfill.min.js?features=default,fetch,Promise,Array.prototype.includes"><\/script>');
+    }
+  </script>
+</head>
+<body>
+  
+  <!-- Header -->
+  <header role="banner" class="site-header">
+    <div class="container header-container">
+      <img src="images/logo.svg" alt="SuperSpeech" class="logo">
+      <nav role="navigation" aria-label="Main navigation">
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#pricing">Pricing</a></li>
+          <li><a href="#order">Order Now</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li id="dashboardLink" style="display:none;"><a href="#dashboard">My Dashboard</a></li>
+        </ul>
+      </nav>
+      <div class="auth-section">
+        <button id="loginButton" class="btn btn-secondary btn-small">Login</button>
+        <div id="userMenu" class="user-menu" style="display:none;">
+          <span id="userName" class="user-name"></span>
+          <button id="logoutButton" class="btn btn-secondary btn-small">Logout</button>
+        </div>
+      </div>
+    </div>
+  </header>
+  
+  <!-- Main Content -->
+  <main role="main">
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+      <div class="container">
+        <div class="hero-content">
+          <div class="hero-text">
+            <h1>Professional Speeches<br>for <span class="gradient-text">Any Occasion</span></h1>
+            <p class="hero-subtitle">Written in the tone you desire - serious, humorous, emotional or pure banter!</p>
+            <a href="#pricing" class="btn btn-primary btn-large">Get Your Speech</a>
+          </div>
+          <div class="hero-image">
+            <img src="images/hero-graphic.svg" alt="Professional speech writing">
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Pricing Tiers -->
+    <section id="pricing" class="pricing-section">
+      <div class="container">
+        <h2 class="section-title">Choose Your Package</h2>
+        <div class="pricing-grid">
+          <!-- Grade 1: The Toast -->
+          <div class="pricing-card">
+            <div class="pricing-header">
+              <h3>The Toast</h3>
+              <p class="pricing-tagline">Short & Sweet</p>
+            </div>
+            <div class="pricing-details">
+              <p class="price">£9.99</p>
+              <ul class="features">
+                <li>~300 words</li>
+                <li>2 minutes reading time</li>
+                <li>Perfect for toasts & thank-yous</li>
+                <li>All tone styles available</li>
+              </ul>
+            </div>
+          </div>
+          
+          <!-- Grade 2: The Main Event -->
+          <div class="pricing-card featured">
+            <div class="badge">Most Popular</div>
+            <div class="pricing-header">
+              <h3>The Main Event</h3>
+              <p class="pricing-tagline">The Full Experience</p>
+            </div>
+            <div class="pricing-details">
+              <p class="price">£19.99</p>
+              <ul class="features">
+                <li>~750 words</li>
+                <li>5 minutes reading time</li>
+                <li>Best for weddings & milestones</li>
+                <li>Delivery notes included</li>
+              </ul>
+            </div>
+          </div>
+          
+          <!-- Grade 3: The Keynote -->
+          <div class="pricing-card">
+            <div class="pricing-header">
+              <h3>The Keynote</h3>
+              <p class="pricing-tagline">Premium Address</p>
+            </div>
+            <div class="pricing-details">
+              <p class="price">£34.99</p>
+              <ul class="features">
+                <li>~1,500 words</li>
+                <li>10 minutes reading time</li>
+                <li>Corporate & formal events</li>
+                <li>Detailed stage directions</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Order Form -->
+    <section id="order" class="order-section">
+      <div class="container">
+        <h2 class="section-title">Create Your Speech</h2>
+        <p class="section-subtitle">Fill in the details and we'll craft the perfect words for your occasion</p>
+        <p class="form-helper-text" style="margin-bottom: 30px; font-style: italic; color: #666;">💡 Leave blank if you like - we'll work with what you give us!</p>
+        
+        <form id="speechForm" class="speech-form">
+          <!-- Step 1: Basic Info -->
+          <div class="form-section">
+            <h3>Your Information</h3>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="customerName">Your Name *</label>
+                <input type="text" id="customerName" name="customerName" required>
+              </div>
+              <div class="form-group">
+                <label for="customerEmail">Email Address *</label>
+                <input type="email" id="customerEmail" name="customerEmail" required>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Step 2: Package & Tone -->
+          <div class="form-section">
+            <h3>Choose Your Style</h3>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="package">Package *</label>
+                <select id="package" name="package" required>
+                  <option value="">Select a package...</option>
+                  <option value="toast">The Toast (£9.99 - 2 min)</option>
+                  <option value="main">The Main Event (£19.99 - 5 min)</option>
+                  <option value="keynote">The Keynote (£34.99 - 10 min)</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="tone">Tone Style *</label>
+                <select id="tone" name="tone" required>
+                  <option value="">Select a tone...</option>
+                  <option value="serious">Serious - Professional & authoritative</option>
+                  <option value="humorous">Humorous - Witty & lighthearted</option>
+                  <option value="emotional">Emotional - Heartfelt & sincere</option>
+                  <option value="banter">Pure Banter - Cheeky & playful</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Step 3: Occasion Category -->
+          <div class="form-section">
+            <h3>Occasion Details</h3>
+            <div class="form-group">
+              <label for="category">Occasion Category *</label>
+              <select id="category" name="category" required>
+                <option value="">Select a category...</option>
+                <option value="wedding">Weddings & Romance</option>
+                <option value="corporate">Corporate & Professional</option>
+                <option value="milestone">Milestone Celebrations</option>
+                <option value="memorial">Memorials & Tributes</option>
+              </select>
+            </div>
+            
+            <div class="form-group">
+              <label for="specificOccasion">Specific Occasion *</label>
+              <select id="specificOccasion" name="specificOccasion" required disabled>
+                <option value="">Select category first...</option>
+              </select>
+            </div>
+          </div>
+          
+          <!-- Step 4: Dynamic Questions (populated by JavaScript) -->
+          <div id="dynamicQuestions" class="form-section" style="display:none;">
+            <h3>Tell Us More</h3>
+            <div id="questionsContainer"></div>
+          </div>
+          
+          <!-- Submit -->
+          <div class="form-section">
+            <button type="submit" class="btn btn-primary btn-large">Submit Order</button>
+            <p class="form-note">Your speech will be written and sent to your email within 3 hours</p>
+          </div>
+        </form>
+        
+        <!-- Success Message -->
+        <div id="successMessage" style="display:none;" class="success-box">
+          <h3>✓ Order Received!</h3>
+          <p>Thank you! Your speech order has been submitted successfully.</p>
+          <p>We'll email you within 3 hours with your professionally crafted speech.</p>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+      <div class="container">
+        <h2 class="section-title">Get In Touch</h2>
+        <p class="section-subtitle">Have questions? Need help? We're here for you!</p>
+        
+        <div class="contact-content">
+          <div class="contact-info">
+            <h3>Contact Us</h3>
+            <p><strong>Email:</strong> hello@superspeech.biz</p>
+            <p><strong>Response Time:</strong> Within 24 hours</p>
+            <p>We're happy to answer any questions about our speech writing services, help you choose the right package, or discuss custom requirements.</p>
+          </div>
+          
+          <div class="contact-form-wrapper">
+            <form id="contactForm" class="contact-form">
+              <div class="form-group">
+                <label for="contactName">Your Name *</label>
+                <input type="text" id="contactName" name="contactName" required>
+              </div>
+              
+              <div class="form-group">
+                <label for="contactEmail">Your Email *</label>
+                <input type="email" id="contactEmail" name="contactEmail" required>
+              </div>
+              
+              <div class="form-group">
+                <label for="contactSubject">Subject *</label>
+                <input type="text" id="contactSubject" name="contactSubject" required>
+              </div>
+              
+              <div class="form-group">
+                <label for="contactMessage">Message *</label>
+                <textarea id="contactMessage" name="contactMessage" rows="5" required></textarea>
+              </div>
+              
+              <button type="submit" class="btn btn-primary">Send Message</button>
+            </form>
+            
+            <div id="contactSuccess" style="display:none;" class="success-box">
+              <h3>✓ Message Sent!</h3>
+              <p>Thank you for contacting us. We'll get back to you within 24 hours.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Dashboard Section (Only visible when logged in) -->
+    <section id="dashboard" class="dashboard-section" style="display:none;">
+      <div class="container">
+        <h2 class="section-title">My Dashboard</h2>
+        <p class="welcome-message">Welcome back, <span id="dashboardUserName"></span>!</p>
+        
+        <div class="dashboard-grid">
+          <!-- Order History -->
+          <div class="dashboard-card">
+            <h3>📋 My Orders</h3>
+            <div id="orderHistory" class="order-list">
+              <p class="loading">Loading your orders...</p>
+            </div>
+          </div>
+          
+          <!-- Speeches in Progress -->
+          <div class="dashboard-card">
+            <h3>✍️ Speeches in Progress</h3>
+            <div id="speechesInProgress" class="speech-list">
+              <p class="loading">Loading your speeches...</p>
+            </div>
+          </div>
+          
+          <!-- Completed Speeches -->
+          <div class="dashboard-card">
+            <h3>✅ Completed Speeches</h3>
+            <div id="completedSpeeches" class="speech-list">
+              <p class="loading">Loading completed speeches...</p>
+            </div>
+          </div>
+          
+          <!-- Account Info -->
+          <div class="dashboard-card">
+            <h3>👤 Account Information</h3>
+            <div id="accountInfo">
+              <p><strong>Email:</strong> <span id="userEmail"></span></p>
+              <p><strong>Member Since:</strong> <span id="memberSince"></span></p>
+              <p><strong>Total Orders:</strong> <span id="totalOrders">0</span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <!-- Login/Signup Modal -->
+  <div id="authModal" class="modal" style="display:none;">
+    <div class="modal-content">
+      <span class="modal-close">&times;</span>
+      <h2>Continue as Guest or Create Account?</h2>
+      <p>Creating an account lets you track your orders and access your speeches anytime!</p>
+      
+      <div class="auth-options">
+        <button id="continueAsGuest" class="btn btn-outline">Continue as Guest</button>
+        <button id="createAccount" class="btn btn-primary">Create Account</button>
+      </div>
+      
+      <p class="modal-note">Already have an account? <a href="#" id="loginLink">Login here</a></p>
+    </div>
+  </div>
+  
+  <!-- Footer -->
+  <footer role="contentinfo">
+    <p>&copy; 2026 SuperSpeech.biz - Professional Speeches for Any Occasion</p>
+  </footer>
+  
+  <!-- Hidden Netlify Forms for form detection -->
+  <form name="superspeech-order" netlify netlify-honeypot="bot-field" hidden>
+    <input type="text" name="customer-name" />
+    <input type="email" name="customer-email" />
+    <input type="text" name="package" />
+    <input type="text" name="tone" />
+    <input type="text" name="category" />
+    <input type="text" name="specific-occasion" />
+    <textarea name="full-data"></textarea>
+  </form>
+  
+  <form name="superspeech-contact" netlify netlify-honeypot="bot-field" hidden>
+    <input type="text" name="contact-name" />
+    <input type="email" name="contact-email" />
+    <input type="text" name="contact-subject" />
+    <textarea name="contact-message"></textarea>
+  </form>
+  
+  <!-- Netlify Identity Widget -->
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  
+  <!-- JavaScript (defer for non-blocking load) -->
+  <script src="js/app.js" defer></script>
+  <script src="js/superspeech.js" defer></script>
+  <script src="js/auth.js" defer></script>
+  
+  <!-- Analytics (async load) -->
+  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script> -->
+  
+</body>
+</html>

@@ -452,16 +452,19 @@
       questionnaire: {}
     };
     
-    // Add dynamic questionnaire answers
-    var category = formData.get('category');
-    if (category && occasions[category]) {
-      occasions[category].questions.forEach(function(question) {
-        var answer = formData.get(question.id);
-        if (answer) {
-          data.questionnaire[question.id] = answer;
+    // Add all dynamic questionnaire answers from the form
+    // Get all form inputs and collect their values
+    var allInputs = speechForm.querySelectorAll('input[type="text"], input[type="email"], textarea, select');
+    allInputs.forEach(function(input) {
+      var name = input.getAttribute('name');
+      // Skip the basic form fields, only collect questionnaire answers
+      if (name && !['customerName', 'customerEmail', 'package', 'tone', 'category', 'specificOccasion'].includes(name)) {
+        var value = input.value;
+        if (value) {
+          data.questionnaire[name] = value;
         }
-      });
-    }
+      }
+    });
     
     console.log('Order Data:', data);
     

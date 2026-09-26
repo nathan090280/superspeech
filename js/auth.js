@@ -263,19 +263,139 @@
   // ===========================
   
   function loadUserDashboard(user) {
-    // Get user's orders from localStorage
-    var allOrders = JSON.parse(localStorage.getItem('superspeech_orders') || '[]');
-    var userOrders = allOrders.filter(function(order) {
-      return order.userId === user.id || order.customer.email === user.email;
-    });
+    // First try to load from Firebase via backend
+    fetch('https://superspeech-backend.onrender.com/api/dashboard/' + encodeURIComponent(user.email))
+      .then(function(response) {
+        return response.json();
+      })
+      .then(function(data) {
+        displayDashboardData(data, user);
+      })
+      .catch(function(error) {
+        console.error('Error loading dashboard from Firebase:', error);
+        // Fallback to localStorage
+        var allOrders = JSON.parse(localStorage.getItem('superspeech_orders') || '[]');
+        var userOrders = allOrders.filter(function(order) {
+          return order.userId === user.id || order.customer.email === user.email;
+        });
+        displayOrders(userOrders);
+      });
+  }
+  
+  function displayDashboardData(data, user) {
+    var orderHistory = document.getElementById('orderHistory');
+    var speechesInProgress = document.getElementById('speechesInProgress');
+    var completedSpeeches = document.getElementById('completedSpeeches');
+    
+    // Get orders and speeches from data
+    var orders = data.orders || [];
+    var speeches = data.speeches || [];
+    var messages = data.messages || [];
     
     // Update total orders count
     if (document.getElementById('totalOrders')) {
-      document.getElementById('totalOrders').textContent = userOrders.length;
+      document.getElementById('totalOrders').textContent = orders.length;
     }
     
-    // Display orders
-    displayOrders(userOrders);
+    // Display all orders in order history
+    if (orders.length === 0) {
+      orderHistory.innerHTML = '<p class="no-data">No orders yet. <a href="#order">Place your first order!</a></p>';
+    } else {
+      var orderHTML = '';
+      orders.sort(function(a, b) {
+        return new Date(b.createdAt || b.timestamp) - new Date(a.createdAt || a.timestamp);
+      });
+      
+      orders.forEach(function(order) {
+        var date = new Date(order.createdAt || order.timestamp).toLocaleDateString();
+        var packageName = order.package || order.order?.package || 'Unknown';
+        var occasion = order.occasion || order.order?.specificOccasion || 'Custom';
+        
+        orderHTML += '<div class="order-item">';
+        orderHTML += '  <div class="order-header">';
+        orderHTML += '    <span class="order-date">' + date + '</span>';
+        orderHTML += '  </div>';
+        orderHTML += '  <div class="order-details">';
+        orderHTML += '    <p><strong>Package:</strong> ' + packageName + '</p>';
+        orderHTML += '    <p><strong>Occasion:</strong> ' + occasion + '</p>';
+        orderHTML += '  </div>';
+        orderHTML += '</div>';
+      });
+      orderHistory.innerHTML = orderHTML;
+    }
+    
+    // Display speeches in progress
+    var inProgress = speeches.filter(function(s) { return s.status === 'in_progress'; });
+    if (inProgress.length === 0) {
+      speechesInProgress.innerHTML = '<p class="no-data">No speeches currently being written.</p>';
+    } else {
+      var progressHTML = '';
+      inProgress.forEach(function(speech) {
+        var date = new Date(speech.createdAt).toLocaleDateString();
+        progressHTML += '<div class="order-item">';
+        progressHTML += '  <div class="order-header">';
+        progressHTML += '    <span class="order-date">' + date + '</span>';
+        progressHTML += '    <span class="order-status status-pending">In Progress</span>';
+        progressHTML += '  </div>';
+        progressHTML += '  <div class="order-details">';
+        progressHTML += '    <p><strong>Occasion:</strong> ' + (speech.occasion || 'Custom Speech') + '</p>';
+        progressHTML += '    <p style="font-size: 0.875rem; color: #666;">Estimated delivery: within 3 hours</p>';
+        progressHTML += '  </div>';
+        progressHTML += '</div>';
+      });
+      speechesInProgress.innerHTML = progressHTML;
+    }
+    
+    // Display completed speeches
+    var completed = speeches.filter(function(s) { return s.status === 'completed'; });
+    if (completed.length === 0) {
+      completedSpeeches.innerHTML = '<p class="no-data">No completed speeches yet.</p>';
+    } else {
+      var completedHTML = '';
+      completed.forEach(function(speech) {
+        var date = new Date(speech.completedAt).toLocaleDateString();
+        completedHTML += '<div class="order-item">';
+        completedHTML += '  <div class="order-header">';
+        completedHTML += '    <span class="order-date">' + date + '</span>';
+        completedHTML += '    <span class="order-status status-completed">✓ Completed</span>';
+        completedHTML += '  </div>';
+        completedHTML += '  <div class="order-details">';
+        completedHTML += '    <p><strong>Occasion:</strong> ' + (speech.occasion || 'Custom Speech') + '</p>';
+        if (speech.downloadUrl) {
+          completedHTML += '    <p><a href="' + speech.downloadUrl + '" class="download-link">📥 Download Speech</a></p>';
+        }
+        completedHTML += '  </div>';
+        completedHTML += '</div>';
+      });
+      completedSpeeches.innerHTML = completedHTML;
+    }
+    
+    // Display messages if there's a messages section
+    var messagesSection = document.getElementById('messagesSection');
+    if (messagesSection) {
+      if (messages.length === 0) {
+        messagesSection.innerHTML = '<p class="no-data">No messages yet.</p>';
+      } else {
+        var messagesHTML = '';
+        messages.sort(function(a, b) {
+          return new Date(b.createdAt) - new Date(a.createdAt);
+        });
+        
+        messages.forEach(function(msg) {
+          var date = new Date(msg.createdAt).toLocaleDateString();
+          messagesHTML += '<div class="message-item">';
+          messagesHTML += '  <div class="message-header">';
+          messagesHTML += '    <span class="message-from"><strong>From:</strong> ' + msg.from + '</span>';
+          messagesHTML += '    <span class="message-date">' + date + '</span>';
+          messagesHTML += '  </div>';
+          messagesHTML += '  <div class="message-body">';
+          messagesHTML += '    <p>' + msg.body + '</p>';
+          messagesHTML += '  </div>';
+          messagesHTML += '</div>';
+        });
+        messagesSection.innerHTML = messagesHTML;
+      }
+    }
   }
   
   function displayOrders(orders) {

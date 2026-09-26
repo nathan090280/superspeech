@@ -207,42 +207,52 @@
   }
   
   function submitOrder(orderData) {
-    // Send to Netlify form
-    var formData = new FormData();
-    formData.append('form-name', 'superspeech-order');
-    formData.append('customer-name', orderData.customer.name);
-    formData.append('customer-email', orderData.customer.email);
-    formData.append('package', orderData.order.package);
-    formData.append('tone', orderData.order.tone);
-    formData.append('category', orderData.order.category);
-    formData.append('specific-occasion', orderData.order.specificOccasion);
-    formData.append('full-data', JSON.stringify(orderData, null, 2));
+    // N8N Webhook URL - Points to questionnaire workflow on Render
+    var n8nWebhookUrl = 'https://n8n-service-4kze.onrender.com/webhook/questionnaire-completed';
     
-    // Add user data if logged in
-    if (orderData.userId) {
-      formData.append('user-id', orderData.userId);
-      formData.append('account-type', 'registered');
-    } else {
-      formData.append('account-type', 'guest');
-    }
+    console.log('📤 Sending order to n8n:', n8nWebhookUrl);
     
-    fetch('/', {
+    // Send to n8n
+    fetch(n8nWebhookUrl, {
       method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: new URLSearchParams(formData).toString()
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(orderData)
     })
-    .then(function() {
-      console.log('Order submitted to Netlify Forms');
+    .then(function(response) {
+      console.log('✓ n8n responded with status:', response.status);
+      if (!response.ok) {
+        console.warn('n8n returned error:', response.status);
+      }
+      return response.json().catch(function() {
+        console.log('⚠ No JSON response from n8n, treating as success');
+        return { success: true };
+      });
+    })
+    .then(function(data) {
+      console.log('✅ Order submitted to n8n:', data);
       
-      // Also save to user's metadata if logged in
+      // Save to user's metadata if logged in
       if (orderData.userId) {
         saveOrderToUserMetadata(orderData);
       }
       
-      // Show success message
-      document.getElementById('speechForm').style.display = 'none';
-      document.getElementById('successMessage').style.display = 'block';
-      document.getElementById('successMessage').scrollIntoView({ behavior: 'smooth' });
+      // Show success message - call window function if available
+      if (window.showSuccessMessage) {
+        console.log('📊 Calling showSuccessMessage');
+        window.showSuccessMessage();
+      } else {
+        // Fallback
+        var successMsg = document.getElementById('successMessage');
+        var form = document.getElementById('speechForm');
+        if (form && successMsg) {
+          form.style.display = 'none';
+          successMsg.style.display = 'block';
+          successMsg.scrollIntoView({ behavior: 'smooth' });
+          console.log('✓ Success message shown (fallback)');
+        }
+      }
       
       // Download JSON backup
       var dataStr = JSON.stringify(orderData, null, 2);
@@ -251,9 +261,10 @@
       link.href = URL.createObjectURL(dataBlob);
       link.download = 'superspeech_order_' + orderData.timestamp.replace(/[:.]/g, '-') + '.json';
       link.click();
+      console.log('📥 JSON backup downloaded');
     })
     .catch(function(error) {
-      console.error('Error submitting order:', error);
+      console.error('❌ Error submitting order:', error);
       alert('Error submitting order. Please try again or contact hello@superspeech.biz');
     });
   }
@@ -263,16 +274,37 @@
   // ===========================
   
   function loadUserDashboard(user) {
-    // First try to load from Firebase via backend
-    fetch('https://superspeech-backend.onrender.com/api/dashboard/' + encodeURIComponent(user.email))
+    // Try to load from Firebase via backend (with timeout)
+    var fetchPromise = fetch('https://superspeech-backend.onrender.com/api/dashboard/' + encodeURIComponent(user.email), {
+      timeout: 5000
+    })
       .then(function(response) {
+        if (!response.ok) throw new Error('API error');
         return response.json();
-      })
+      });
+    
+    // Set a timeout for the fetch
+    var timeoutPromise = new Promise(function(resolve) {
+      setTimeout(function() {
+        resolve(null);
+      }, 5000);
+    });
+    
+    Promise.race([fetchPromise, timeoutPromise])
       .then(function(data) {
-        displayDashboardData(data, user);
+        if (data) {
+          displayDashboardData(data, user);
+        } else {
+          // Fallback to localStorage
+          var allOrders = JSON.parse(localStorage.getItem('superspeech_orders') || '[]');
+          var userOrders = allOrders.filter(function(order) {
+            return order.userId === user.id || order.customer.email === user.email;
+          });
+          displayOrders(userOrders);
+        }
       })
       .catch(function(error) {
-        console.error('Error loading dashboard from Firebase:', error);
+        console.warn('Dashboard API error, using fallback:', error);
         // Fallback to localStorage
         var allOrders = JSON.parse(localStorage.getItem('superspeech_orders') || '[]');
         var userOrders = allOrders.filter(function(order) {

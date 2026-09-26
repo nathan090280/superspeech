@@ -433,6 +433,8 @@
   function handleFormSubmit(e) {
     e.preventDefault();
     
+    console.log('✓ Form submit handler triggered');
+    
     // Collect form data
     var formData = new FormData(speechForm);
     var data = {
@@ -461,8 +463,6 @@
       });
     }
     
-    // For now, save to local storage and show success
-    // Later: send to n8n webhook
     console.log('Order Data:', data);
     
     // Save to localStorage as backup
@@ -472,14 +472,21 @@
     
     // Submit with authentication check
     if (window.submitOrderWithAuth) {
+      console.log('✓ Calling submitOrderWithAuth');
       window.submitOrderWithAuth(data);
     } else {
+      console.log('⚠ submitOrderWithAuth not available, using fallback');
       // Fallback if auth not loaded yet
       saveOrderToWorkspace(data);
-      speechForm.style.display = 'none';
-      successMessage.style.display = 'block';
-      successMessage.scrollIntoView({ behavior: 'smooth' });
+      showSuccessMessage();
     }
+  }
+  
+  function showSuccessMessage() {
+    speechForm.style.display = 'none';
+    successMessage.style.display = 'block';
+    successMessage.scrollIntoView({ behavior: 'smooth' });
+    console.log('✓ Success message shown');
   }
   
   function saveOrderToWorkspace(data) {
@@ -625,5 +632,8 @@
     initPricingCards();
     initContactForm();
   });
+  
+  // Expose showSuccessMessage to global scope for auth.js
+  window.showSuccessMessage = showSuccessMessage;
   
 })();

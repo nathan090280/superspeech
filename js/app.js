@@ -68,6 +68,12 @@
           return;
         }
         
+        // Special case: Dashboard link - let hash change happen for auth.js to handle
+        if (href === '#dashboard') {
+          // Don't prevent default - let the hash change naturally
+          return;
+        }
+        
         var target = document.querySelector(href);
         if (target) {
           e.preventDefault();

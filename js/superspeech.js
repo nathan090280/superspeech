@@ -65,218 +65,9 @@
   // ===========================
   
   var questionSets = {
-    // Best Man / Best Woman / Best Person (same questions)
-    'best-man': {
-      base: [
-        { id: 'relationship', label: 'What is your relationship to the groom/bride?', type: 'text', required: true },
-        { id: 'firstMet', label: 'What was the groom/bride like when you first met them?', type: 'textarea', required: true }
-      ],
-      humorous: [
-        { id: 'embarrassingPhase', label: 'What was their most embarrassing fashion phase, haircut, or hobby?', type: 'textarea', required: false },
-        { id: 'arrestedFor', label: 'If they were arrested, what would it most likely be for?', type: 'text', required: false },
-        { id: 'terribleAt', label: 'What is something they are surprisingly terrible at?', type: 'text', required: false }
-      ],
-      emotional: [
-        { id: 'firstMentioned', label: 'When did they first mention their partner to you, and what did they say?', type: 'textarea', required: false },
-        { id: 'realizedTheOne', label: 'When did you realize this relationship was "the one" for them?', type: 'textarea', required: false },
-        { id: 'changedForBetter', label: 'How have they changed for the better since meeting their partner?', type: 'textarea', required: false }
-      ],
-      serious: [
-        { id: 'definingQuality', label: 'What is the one quality that defines them as a person?', type: 'text', required: false },
-        { id: 'coupleAsTeam', label: 'What is your favorite quality about the couple as a team?', type: 'textarea', required: false },
-        { id: 'marriageAdvice', label: 'What is your number one piece of marriage advice for them?', type: 'textarea', required: false }
-      ],
-      banter: [
-        { id: 'childhoodStory', label: 'What childhood or college story perfectly sums up their personality?', type: 'textarea', required: false },
-        { id: 'ridiculousHabit', label: 'What is their most ridiculous or endearing habit?', type: 'text', required: false },
-        { id: 'proposalDetails', label: 'Any behind-the-scenes details about how they planned the proposal?', type: 'textarea', required: false }
-      ]
-    },
-    
-    // Maid/Matron of Honour
-    'maid-matron-of-honour': {
-      base: [
-        { id: 'relationship', label: 'What is your relationship to the bride/groom?', type: 'text', required: true },
-        { id: 'friendship', label: 'How did your friendship begin?', type: 'textarea', required: true }
-      ],
-      humorous: [
-        { id: 'shoppingDisaster', label: 'What was the funniest disaster during wedding planning or dress shopping?', type: 'textarea', required: false },
-        { id: 'datingHistory', label: 'Any funny stories about their dating history before meeting "the one"?', type: 'textarea', required: false }
-      ],
-      emotional: [
-        { id: 'firstImpressionPartner', label: 'What was your first impression of their partner?', type: 'textarea', required: false },
-        { id: 'perfectMatch', label: 'What makes them a perfect match?', type: 'textarea', required: false },
-        { id: 'growthTogether', label: 'How have you seen them grow together as a couple?', type: 'textarea', required: false }
-      ],
-      serious: [
-        { id: 'admirableQuality', label: 'What quality do you most admire in them?', type: 'text', required: false },
-        { id: 'relationshipAdvice', label: 'What advice would you give them for a lasting marriage?', type: 'textarea', required: false }
-      ],
-      banter: [
-        { id: 'secretKeeper', label: 'What secret have they sworn you to keep (that you can now reveal)?', type: 'textarea', required: false },
-        { id: 'worstBoyfriend', label: 'Can you roast one of their terrible ex-boyfriends/girlfriends?', type: 'textarea', required: false }
-      ]
-    },
-    
-    // Groom Speech
-    'groom': {
-      base: [
-        { id: 'howMet', label: 'How did you and your partner meet?', type: 'textarea', required: true },
-        { id: 'knewSheWasOne', label: 'When did you know they were "the one"?', type: 'textarea', required: true }
-      ],
-      humorous: [
-        { id: 'firstDateDisaster', label: 'Any funny first date disasters or mishaps?', type: 'textarea', required: false },
-        { id: 'inLawsStory', label: 'Funny story about winning over the in-laws?', type: 'textarea', required: false }
-      ],
-      emotional: [
-        { id: 'favoriteMemory', label: 'What is your favorite memory together?', type: 'textarea', required: false },
-        { id: 'gratefulFor', label: 'What are you most grateful for about your partner?', type: 'textarea', required: false },
-        { id: 'futureVision', label: 'What are you most excited about for your future together?', type: 'textarea', required: false }
-      ],
-      serious: [
-        { id: 'vows', label: 'What promises do you want to make publicly?', type: 'textarea', required: false },
-        { id: 'thankYous', label: 'Who do you want to thank and why?', type: 'textarea', required: false }
-      ],
-      banter: [
-        { id: 'nervousStory', label: 'What were you most nervous about before proposing?', type: 'textarea', required: false }
-      ]
-    },
-    
-    // Bride Speech (same structure as groom)
-    'bride': {
-      base: [
-        { id: 'howMet', label: 'How did you and your partner meet?', type: 'textarea', required: true },
-        { id: 'knewHeWasOne', label: 'When did you know they were "the one"?', type: 'textarea', required: true }
-      ],
-      humorous: [
-        { id: 'firstDateDisaster', label: 'Any funny first date disasters or mishaps?', type: 'textarea', required: false },
-        { id: 'inLawsStory', label: 'Funny story about winning over the in-laws?', type: 'textarea', required: false }
-      ],
-      emotional: [
-        { id: 'favoriteMemory', label: 'What is your favorite memory together?', type: 'textarea', required: false },
-        { id: 'gratefulFor', label: 'What are you most grateful for about your partner?', type: 'textarea', required: false },
-        { id: 'futureVision', label: 'What are you most excited about for your future together?', type: 'textarea', required: false }
-      ],
-      serious: [
-        { id: 'vows', label: 'What promises do you want to make publicly?', type: 'textarea', required: false },
-        { id: 'thankYous', label: 'Who do you want to thank and why?', type: 'textarea', required: false }
-      ],
-      banter: [
-        { id: 'proposalReaction', label: 'What was your honest first reaction when they proposed?', type: 'textarea', required: false }
-      ]
-    },
-    
-    // Parent of Bride/Groom
-    'parent-of-bride-groom': {
-      base: [
-        { id: 'relationship', label: 'Are you parent of the bride or groom?', type: 'text', required: true },
-        { id: 'childhoodMemory', label: 'Share a cherished childhood memory of your son/daughter', type: 'textarea', required: true }
-      ],
-      humorous: [
-        { id: 'embarrassingStory', label: 'What embarrassing childhood story can you finally reveal?', type: 'textarea', required: false }
-      ],
-      emotional: [
-        { id: 'proudestMoment', label: 'What is your proudest moment as their parent?', type: 'textarea', required: false },
-        { id: 'firstMetPartner', label: 'What did you think when you first met their partner?', type: 'textarea', required: false },
-        { id: 'wishesForFuture', label: 'What are your wishes for their future together?', type: 'textarea', required: false }
-      ],
-      serious: [
-        { id: 'valuesShared', label: 'What values did you try to instill in them?', type: 'textarea', required: false },
-        { id: 'adviceForMarriage', label: 'What marriage advice from your own experience would you share?', type: 'textarea', required: false }
-      ],
-      banter: [
-        { id: 'teenageYears', label: 'What were they like during their teenage years?', type: 'textarea', required: false }
-      ]
-    },
-    
-    // Corporate - Retirement/Farewell
-    'retirement-farewell': {
-      base: [
-        { id: 'role', label: 'What is your role and relationship to the retiree?', type: 'text', required: true },
-        { id: 'yearsService', label: 'How many years have they served, and in what capacity?', type: 'text', required: true }
-      ],
-      humorous: [
-        { id: 'officeStory', label: 'What is the funniest office story involving them?', type: 'textarea', required: false },
-        { id: 'retirementPlans', label: 'What do they plan to do in retirement (or what are you hoping they will do)?', type: 'textarea', required: false }
-      ],
-      emotional: [
-        { id: 'legacy', label: 'What legacy are they leaving behind?', type: 'textarea', required: false },
-        { id: 'impactOnTeam', label: 'How did they impact the team or company?', type: 'textarea', required: false }
-      ],
-      serious: [
-        { id: 'achievements', label: 'What are their most notable achievements?', type: 'textarea', required: true },
-        { id: 'lessons', label: 'What lessons did they teach others?', type: 'textarea', required: false }
-      ],
-      banter: [
-        { id: 'quirks', label: 'What workplace quirks or habits will we miss?', type: 'textarea', required: false }
-      ]
-    },
-    
-    // Milestone - Big Birthday
-    'big-birthday-30th-50th-etc-': {
-      base: [
-        { id: 'relationship', label: 'What is your relationship to the birthday person?', type: 'text', required: true },
-        { id: 'age', label: 'What milestone birthday are we celebrating?', type: 'text', required: true }
-      ],
-      humorous: [
-        { id: 'ageJoke', label: 'What gentle roast about their age can we include?', type: 'textarea', required: false },
-        { id: 'throughYears', label: 'How have they changed (or not changed!) through the years?', type: 'textarea', required: false }
-      ],
-      emotional: [
-        { id: 'favoriteMemory', label: 'What is your favorite memory with them?', type: 'textarea', required: false },
-        { id: 'impact', label: 'What impact have they had on your life?', type: 'textarea', required: false }
-      ],
-      serious: [
-        { id: 'achievements', label: 'What are their greatest achievements so far?', type: 'textarea', required: false },
-        { id: 'wishesAhead', label: 'What are your wishes for their next chapter?', type: 'textarea', required: false }
-      ],
-      banter: [
-        { id: 'decade', label: 'What defines their personality from the last decade?', type: 'textarea', required: false }
-      ]
-    },
-    
-    // Memorial - Eulogy
-    'eulogy': {
-    base: [
-        { id: 'relationship', label: 'How do you know them?', type: 'text', required: true }
-      ],
-      serious: [
-        { id: 'q1', label: 'What was your relationship to the deceased, and how long did you know them?', type: 'textarea', required: false },
-        { id: 'q2', label: 'What qualities, values or characteristics best defined them as a person?', type: 'textarea', required: false },
-        { id: 'q3', label: 'What achievement, contribution or aspect of their life do you think deserves particular recognition?', type: 'textarea', required: false },
-        { id: 'q4', label: 'What is the most meaningful memory you have of them, or the moment that best captures who they were?', type: 'textarea', required: false },
-        { id: 'q5', label: 'What did they mean to you, your family, friends or wider community?', type: 'textarea', required: false },
-        { id: 'q6', label: 'What would you most like people to remember about them after today?', type: 'textarea', required: false }
-      ],
-      humorous: [
-        { id: 'q1', label: 'What was your relationship to the deceased, and how long did you have to put up with them?', type: 'textarea', required: false },
-        { id: 'q2', label: 'What funny habit, personality trait or quirk of theirs could you never quite get used to?', type: 'textarea', required: false },
-        { id: 'q3', label: 'What is the funniest, most embarrassing or most ridiculous story about them that can be told appropriately today?', type: 'textarea', required: false },
-        { id: 'q4', label: 'What was something they regularly did that would make everyone who knew them immediately think, "Yep, that\'s them"?', type: 'textarea', required: false },
-        { id: 'q5', label: 'What memorable mishap, bad decision or piece of questionable advice from them still makes you laugh?', type: 'textarea', required: false },
-        { id: 'q6', label: 'If they could hear this speech, what would they probably heckle you about for getting wrong?', type: 'textarea', required: false }
-      ],
-      emotional: [
-        { id: 'q1', label: 'What was your relationship to the deceased, and what did they mean to you personally?', type: 'textarea', required: false },
-        { id: 'q2', label: 'What is your most treasured memory of them?', type: 'textarea', required: false },
-        { id: 'q3', label: 'What quality, kindness or part of their character touched your life most deeply?', type: 'textarea', required: false },
-        { id: 'q4', label: 'How did they influence or shape the lives of the people around them?', type: 'textarea', required: false },
-        { id: 'q5', label: 'What do you think you will miss most about them now that they are gone?', type: 'textarea', required: false },
-        { id: 'q6', label: 'If you could say one final thing directly to them today, what would you want them to know?', type: 'textarea', required: false }
-      ],
-      banter: [
-        { id: 'q1', label: 'What was your relationship to the deceased, and what exactly did they put you through over the years?', type: 'textarea', required: false },
-        { id: 'q2', label: 'What was their most gloriously annoying habit or personality trait?', type: 'textarea', required: false },
-        { id: 'q3', label: 'What story about them would have the people who knew them best crying with laughter — rather than crying for the usual reasons?', type: 'textarea', required: false },
-        { id: 'q4', label: 'What completely ridiculous thing did they believe, do or insist upon that became part of their legend?', type: 'textarea', required: false },
-        { id: 'q5', label: 'What was their greatest piece of bad advice, questionable decision or spectacularly unnecessary bit of behaviour?', type: 'textarea', required: false },
-        { id: 'q6', label: 'If they were here now, what would they be shouting at you for saying in this speech?', type: 'textarea', required: false }
-      ]
-    },
-    
     // Wedding Guest Toast
     'wedding-guest-toast': {
-    base: [
+      base: [
         { id: 'relationship', label: 'How do you know them?', type: 'text', required: true }
       ],
       serious: [
@@ -314,7 +105,7 @@
 
     // Anniversary Party
     'anniversary-party': {
-    base: [
+      base: [
         { id: 'relationship', label: 'How do you know them?', type: 'text', required: true }
       ],
       serious: [
@@ -351,44 +142,9 @@
       ]
     },
 
-    // Company Anniversary
-    'company-anniversary': {
-    base: [
-        { id: 'relationship', label: 'How do you know them?', type: 'text', required: true }
-      ],
-      serious: [
-        { id: 'q1', label: 'How long have you been with the company, and what has your role or position been during that time?', type: 'textarea', required: false },
-        { id: 'q2', label: 'What do you remember most clearly about the company when you first joined, and what has changed since then?', type: 'textarea', required: false },
-        { id: 'q3', label: 'What achievement, milestone or period of growth stands out most to you during your time with the business?', type: 'textarea', required: false },
-        { id: 'q4', label: 'What people, teams or individuals have made a particularly significant contribution to the company\'s journey?', type: 'textarea', required: false },
-        { id: 'q5', label: 'What do you think is most important to recognise or celebrate about the company at this anniversary?', type: 'textarea', required: false }
-      ],
-      humorous: [
-        { id: 'q1', label: 'How long have you worked here, what was your job when you started, and how different is your role now?', type: 'textarea', required: false },
-        { id: 'q2', label: 'What is the biggest change you\'ve witnessed since joining — apart from the number of meetings?', type: 'textarea', required: false },
-        { id: 'q3', label: 'What memorable mistake, mishap, office tradition or bizarre incident from your time here still gets talked about?', type: 'textarea', required: false },
-        { id: 'q4', label: 'Who or what has provided the most entertainment during your time at the company?', type: 'textarea', required: false },
-        { id: 'q5', label: 'If you could describe the company\'s journey so far using one ridiculous analogy, what would it be?', type: 'textarea', required: false }
-      ],
-      emotional: [
-        { id: 'q1', label: 'How long have you been part of the company, and what has your journey through the business meant to you personally?', type: 'textarea', required: false },
-        { id: 'q2', label: 'What moment during your time here made you feel particularly proud to be part of the company?', type: 'textarea', required: false },
-        { id: 'q3', label: 'Which colleagues, mentors or teams have had the greatest impact on you during your time here?', type: 'textarea', required: false },
-        { id: 'q4', label: 'Is there a particular challenge, achievement or period of change that brought the people in the company together?', type: 'textarea', required: false },
-        { id: 'q5', label: 'When you look back at the company\'s journey, what are you most grateful to have been part of?', type: 'textarea', required: false }
-      ],
-      banter: [
-        { id: 'q1', label: 'How long have you been here, what did you actually do when you started, and how much of that job do you still understand?', type: 'textarea', required: false },
-        { id: 'q2', label: 'What is the most ridiculous thing that has happened at the company during your time here?', type: 'textarea', required: false },
-        { id: 'q3', label: 'Which colleague, department or company habit deserves the dubious honour of being the biggest source of workplace chaos?', type: 'textarea', required: false },
-        { id: 'q4', label: 'What company decision, policy or change from the past makes you wonder what the people in charge were smoking?', type: 'textarea', required: false },
-        { id: 'q5', label: 'If you had to give the company a brutally honest review after all these years, what would the headline be?', type: 'textarea', required: false }
-      ]
-    },
-
     // Engagement Party
     'engagement-party': {
-    base: [
+      base: [
         { id: 'relationship', label: 'How do you know them?', type: 'text', required: true }
       ],
       serious: [
@@ -427,7 +183,7 @@
 
     // Baby Shower
     'baby-shower': {
-    base: [
+      base: [
         { id: 'relationship', label: 'How do you know them?', type: 'text', required: true }
       ],
       serious: [
@@ -464,9 +220,44 @@
       ]
     },
 
+    // Company Anniversary
+    'company-anniversary': {
+      base: [
+        { id: 'relationship', label: 'How do you know them?', type: 'text', required: true }
+      ],
+      serious: [
+        { id: 'q1', label: 'How long have you been with the company, and what has your role or position been during that time?', type: 'textarea', required: false },
+        { id: 'q2', label: 'What do you remember most clearly about the company when you first joined, and what has changed since then?', type: 'textarea', required: false },
+        { id: 'q3', label: 'What achievement, milestone or period of growth stands out most to you during your time with the business?', type: 'textarea', required: false },
+        { id: 'q4', label: 'What people, teams or individuals have made a particularly significant contribution to the company\'s journey?', type: 'textarea', required: false },
+        { id: 'q5', label: 'What do you think is most important to recognise or celebrate about the company at this anniversary?', type: 'textarea', required: false }
+      ],
+      humorous: [
+        { id: 'q1', label: 'How long have you worked here, what was your job when you started, and how different is your role now?', type: 'textarea', required: false },
+        { id: 'q2', label: 'What is the biggest change you\'ve witnessed since joining — apart from the number of meetings?', type: 'textarea', required: false },
+        { id: 'q3', label: 'What memorable mistake, mishap, office tradition or bizarre incident from your time here still gets talked about?', type: 'textarea', required: false },
+        { id: 'q4', label: 'Who or what has provided the most entertainment during your time at the company?', type: 'textarea', required: false },
+        { id: 'q5', label: 'If you could describe the company\'s journey so far using one ridiculous analogy, what would it be?', type: 'textarea', required: false }
+      ],
+      emotional: [
+        { id: 'q1', label: 'How long have you been part of the company, and what has your journey through the business meant to you personally?', type: 'textarea', required: false },
+        { id: 'q2', label: 'What moment during your time here made you feel particularly proud to be part of the company?', type: 'textarea', required: false },
+        { id: 'q3', label: 'Which colleagues, mentors or teams have had the greatest impact on you during your time here?', type: 'textarea', required: false },
+        { id: 'q4', label: 'Is there a particular challenge, achievement or period of change that brought the people in the company together?', type: 'textarea', required: false },
+        { id: 'q5', label: 'When you look back at the company\'s journey, what are you most grateful to have been part of?', type: 'textarea', required: false }
+      ],
+      banter: [
+        { id: 'q1', label: 'How long have you been here, what did you actually do when you started, and how much of that job do you still understand?', type: 'textarea', required: false },
+        { id: 'q2', label: 'What is the most ridiculous thing that has happened at the company during your time here?', type: 'textarea', required: false },
+        { id: 'q3', label: 'Which colleague, department or company habit deserves the dubious honour of being the biggest source of workplace chaos?', type: 'textarea', required: false },
+        { id: 'q4', label: 'What company decision, policy or change from the past makes you wonder what the people in charge were smoking?', type: 'textarea', required: false },
+        { id: 'q5', label: 'If you had to give the company a brutally honest review after all these years, what would the headline be?', type: 'textarea', required: false }
+      ]
+    },
+
     // Retirement Party
     'retirement-party': {
-    base: [
+      base: [
         { id: 'relationship', label: 'How do you know them?', type: 'text', required: true }
       ],
       serious: [
@@ -505,7 +296,7 @@
 
     // Achievement Celebration
     'achievement-celebration': {
-    base: [
+      base: [
         { id: 'relationship', label: 'How do you know them?', type: 'text', required: true }
       ],
       serious: [
@@ -542,9 +333,48 @@
       ]
     },
 
-    // Celebration of Life
+    // Eulogy
+    'eulogy': {
+      base: [
+        { id: 'relationship', label: 'How do you know them?', type: 'text', required: true }
+      ],
+      serious: [
+        { id: 'q1', label: 'What was your relationship to the deceased, and how long did you know them?', type: 'textarea', required: false },
+        { id: 'q2', label: 'What qualities, values or characteristics best defined them as a person?', type: 'textarea', required: false },
+        { id: 'q3', label: 'What achievement, contribution or aspect of their life do you think deserves particular recognition?', type: 'textarea', required: false },
+        { id: 'q4', label: 'What is the most meaningful memory you have of them, or the moment that best captures who they were?', type: 'textarea', required: false },
+        { id: 'q5', label: 'What did they mean to you, your family, friends or wider community?', type: 'textarea', required: false },
+        { id: 'q6', label: 'What would you most like people to remember about them after today?', type: 'textarea', required: false }
+      ],
+      humorous: [
+        { id: 'q1', label: 'What was your relationship to the deceased, and how long did you have to put up with them?', type: 'textarea', required: false },
+        { id: 'q2', label: 'What funny habit, personality trait or quirk of theirs could you never quite get used to?', type: 'textarea', required: false },
+        { id: 'q3', label: 'What is the funniest, most embarrassing or most ridiculous story about them that can be told appropriately today?', type: 'textarea', required: false },
+        { id: 'q4', label: 'What was something they regularly did that would make everyone who knew them immediately think, "Yep, that\'s them"?', type: 'textarea', required: false },
+        { id: 'q5', label: 'What memorable mishap, bad decision or piece of questionable advice from them still makes you laugh?', type: 'textarea', required: false },
+        { id: 'q6', label: 'If they could hear this speech, what would they probably heckle you about for getting wrong?', type: 'textarea', required: false }
+      ],
+      emotional: [
+        { id: 'q1', label: 'What was your relationship to the deceased, and what did they mean to you personally?', type: 'textarea', required: false },
+        { id: 'q2', label: 'What is your most treasured memory of them?', type: 'textarea', required: false },
+        { id: 'q3', label: 'What quality, kindness or part of their character touched your life most deeply?', type: 'textarea', required: false },
+        { id: 'q4', label: 'How did they influence or shape the lives of the people around them?', type: 'textarea', required: false },
+        { id: 'q5', label: 'What do you think you will miss most about them now that they are gone?', type: 'textarea', required: false },
+        { id: 'q6', label: 'If you could say one final thing directly to them today, what would you want them to know?', type: 'textarea', required: false }
+      ],
+      banter: [
+        { id: 'q1', label: 'What was your relationship to the deceased, and what exactly did they put you through over the years?', type: 'textarea', required: false },
+        { id: 'q2', label: 'What was their most gloriously annoying habit or personality trait?', type: 'textarea', required: false },
+        { id: 'q3', label: 'What story about them would have the people who knew them best crying with laughter — rather than crying for the usual reasons?', type: 'textarea', required: false },
+        { id: 'q4', label: 'What completely ridiculous thing did they believe, do or insist upon that became part of their legend?', type: 'textarea', required: false },
+        { id: 'q5', label: 'What was their greatest piece of bad advice, questionable decision or spectacularly unnecessary bit of behaviour?', type: 'textarea', required: false },
+        { id: 'q6', label: 'If they were here now, what would they be shouting at you for saying in this speech?', type: 'textarea', required: false }
+      ]
+    },
+
+    // Celebration Of Life
     'celebration-of-life': {
-    base: [
+      base: [
         { id: 'relationship', label: 'How do you know them?', type: 'text', required: true }
       ],
       serious: [
@@ -581,9 +411,9 @@
       ]
     },
 
-    // Charity Gala/Fundraiser
+    // Charity Gala Fundraiser
     'charity-gala-fundraiser': {
-    base: [
+      base: [
         { id: 'relationship', label: 'How do you know them?', type: 'text', required: true }
       ],
       serious: [
@@ -620,9 +450,9 @@
       ]
     },
 
-    // Tribute to Mentor
+    // Tribute To Mentor
     'tribute-to-mentor': {
-    base: [
+      base: [
         { id: 'relationship', label: 'How do you know them?', type: 'text', required: true }
       ],
       serious: [
@@ -661,7 +491,7 @@
 
     // Thank You Speech
     'thank-you-speech': {
-    base: [
+      base: [
         { id: 'relationship', label: 'How do you know them?', type: 'text', required: true }
       ],
       serious: [
@@ -700,7 +530,7 @@
 
     // Legacy Event
     'legacy-event': {
-    base: [
+      base: [
         { id: 'relationship', label: 'How do you know them?', type: 'text', required: true }
       ],
       serious: [
@@ -735,28 +565,28 @@
         { id: 'q5', label: 'What would the people responsible for this legacy absolutely not want mentioned tonight?', type: 'textarea', required: false },
         { id: 'q6', label: 'If this legacy had to be remembered for one completely ridiculous thing, what should it be?', type: 'textarea', required: false }
       ]
-    },
+    }
   };
   
   // Map occasion types to question sets (handles variations)
   var occasionMapping = {
-    'best-man': 'best-man',
-    'maid-matron-of-honour': 'maid-matron-of-honour',
-    'groom': 'groom',
-    'bride': 'bride',
-    'parent-of-bride-groom': 'parent-of-bride-groom',
+    'best-man': 'wedding-guest-toast',  // Use wedding guest toast questions
+    'maid-matron-of-honour': 'wedding-guest-toast',  // Use wedding guest toast questions
+    'groom': 'wedding-guest-toast',  // Use wedding guest toast questions
+    'bride': 'wedding-guest-toast',  // Use wedding guest toast questions
+    'parent-of-bride-groom': 'wedding-guest-toast',  // Use wedding guest toast questions
     'wedding-guest-toast': 'wedding-guest-toast',
-    'vow-renewal': 'groom',  // Similar to bride/groom
+    'vow-renewal': 'anniversary-party',  // Similar to anniversary
     'anniversary-party': 'anniversary-party',
-    'retirement-farewell': 'retirement-farewell',
-    'promotion-welcome': 'retirement-farewell',  // Similar structure
-    'keynote-panel': 'retirement-farewell',
-    'award-acceptance': 'retirement-farewell',
-    'award-presentation': 'retirement-farewell',
+    'retirement-farewell': 'retirement-party',
+    'promotion-welcome': 'company-anniversary',  // Use company anniversary
+    'keynote-panel': 'company-anniversary',  // Use company anniversary
+    'award-acceptance': 'achievement-celebration',  // Use achievement
+    'award-presentation': 'achievement-celebration',  // Use achievement
     'company-anniversary': 'company-anniversary',
-    'big-birthday': 'big-birthday-30th-50th-etc-',
-    'graduation': 'big-birthday-30th-50th-etc-',
-    'bar-bat-mitzvah': 'big-birthday-30th-50th-etc-',
+    'big-birthday': 'engagement-party',  // Use engagement party (celebration)
+    'graduation': 'achievement-celebration',  // Use achievement
+    'bar-bat-mitzvah': 'engagement-party',  // Use engagement party (celebration)
     'engagement-party': 'engagement-party',
     'baby-shower': 'baby-shower',
     'retirement-party': 'retirement-party',

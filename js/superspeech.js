@@ -15,18 +15,12 @@
       name: 'Weddings & Romance',
       types: [
         'Best Man',
-        'Best Woman',
-        'Best Person',
         'Maid/Matron of Honour',
         'Groom',
         'Bride',
-        'Newlyweds',
         'Parent of Bride/Groom',
-        'Bridesmaid/Groomsman',
-        'Vow Renewal',
-        'Sibling of Bride/Groom',
         'Wedding Guest Toast',
-        'Rehearsal Dinner',
+        'Vow Renewal',
         'Anniversary Party'
       ]
     },
@@ -36,31 +30,20 @@
         'Retirement/Farewell',
         'Promotion/Welcome',
         'Keynote/Panel',
-        'Town Hall',
-        'Product Launch/Pitch',
         'Award Acceptance',
         'Award Presentation',
-        'Team Building Event',
-        'Sales Conference',
-        'Leadership Summit',
-        'Company Anniversary',
-        'Training/Workshop Introduction'
+        'Company Anniversary'
       ]
     },
     milestone: {
       name: 'Milestone Celebrations',
       types: [
-        'Big Birthday (30th, 50th etc.)',
-        'Anniversary',
+        'Big Birthday',
         'Graduation',
         'Bar/Bat Mitzvah',
-        'Quinceañera',
-        'Housewarming/Grand Opening',
         'Engagement Party',
         'Baby Shower',
-        'New Baby Announcement',
         'Retirement Party',
-        'School Reunion',
         'Achievement Celebration'
       ]
     },

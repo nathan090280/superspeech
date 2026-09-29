@@ -237,27 +237,47 @@
     
     // Memorial - Eulogy
     'eulogy': {
-      base: [
-        { id: 'relationship', label: 'What was your relationship to the deceased?', type: 'text', required: true },
-        { id: 'definingQuality', label: 'What was their most defining quality or characteristic?', type: 'textarea', required: true }
-      ],
-      humorous: [],
-      emotional: [
-        { id: 'favoriteMemory', label: 'What is your most cherished memory with them?', type: 'textarea', required: true },
-        { id: 'taught', label: 'What did they teach you or others?', type: 'textarea', required: false },
-        { id: 'legacy', label: 'What legacy do they leave behind?', type: 'textarea', required: true }
+    base: [
+        { id: 'relationship', label: 'How do you know them?', type: 'text', required: true }
       ],
       serious: [
-        { id: 'values', label: 'What values did they embody?', type: 'textarea', required: false },
-        { id: 'impactCommunity', label: 'What impact did they have on the community?', type: 'textarea', required: false }
+        { id: 'q1', label: 'What was your relationship to the deceased, and how long did you know them?', type: 'textarea', required: false },
+        { id: 'q2', label: 'What qualities, values or characteristics best defined them as a person?', type: 'textarea', required: false },
+        { id: 'q3', label: 'What achievement, contribution or aspect of their life do you think deserves particular recognition?', type: 'textarea', required: false },
+        { id: 'q4', label: 'What is the most meaningful memory you have of them, or the moment that best captures who they were?', type: 'textarea', required: false },
+        { id: 'q5', label: 'What did they mean to you, your family, friends or wider community?', type: 'textarea', required: false },
+        { id: 'q6', label: 'What would you most like people to remember about them after today?', type: 'textarea', required: false }
       ],
-      banter: []
+      humorous: [
+        { id: 'q1', label: 'What was your relationship to the deceased, and how long did you have to put up with them?', type: 'textarea', required: false },
+        { id: 'q2', label: 'What funny habit, personality trait or quirk of theirs could you never quite get used to?', type: 'textarea', required: false },
+        { id: 'q3', label: 'What is the funniest, most embarrassing or most ridiculous story about them that can be told appropriately today?', type: 'textarea', required: false },
+        { id: 'q4', label: 'What was something they regularly did that would make everyone who knew them immediately think, "Yep, that\'s them"?', type: 'textarea', required: false },
+        { id: 'q5', label: 'What memorable mishap, bad decision or piece of questionable advice from them still makes you laugh?', type: 'textarea', required: false },
+        { id: 'q6', label: 'If they could hear this speech, what would they probably heckle you about for getting wrong?', type: 'textarea', required: false }
+      ],
+      emotional: [
+        { id: 'q1', label: 'What was your relationship to the deceased, and what did they mean to you personally?', type: 'textarea', required: false },
+        { id: 'q2', label: 'What is your most treasured memory of them?', type: 'textarea', required: false },
+        { id: 'q3', label: 'What quality, kindness or part of their character touched your life most deeply?', type: 'textarea', required: false },
+        { id: 'q4', label: 'How did they influence or shape the lives of the people around them?', type: 'textarea', required: false },
+        { id: 'q5', label: 'What do you think you will miss most about them now that they are gone?', type: 'textarea', required: false },
+        { id: 'q6', label: 'If you could say one final thing directly to them today, what would you want them to know?', type: 'textarea', required: false }
+      ],
+      banter: [
+        { id: 'q1', label: 'What was your relationship to the deceased, and what exactly did they put you through over the years?', type: 'textarea', required: false },
+        { id: 'q2', label: 'What was their most gloriously annoying habit or personality trait?', type: 'textarea', required: false },
+        { id: 'q3', label: 'What story about them would have the people who knew them best crying with laughter — rather than crying for the usual reasons?', type: 'textarea', required: false },
+        { id: 'q4', label: 'What completely ridiculous thing did they believe, do or insist upon that became part of their legend?', type: 'textarea', required: false },
+        { id: 'q5', label: 'What was their greatest piece of bad advice, questionable decision or spectacularly unnecessary bit of behaviour?', type: 'textarea', required: false },
+        { id: 'q6', label: 'If they were here now, what would they be shouting at you for saying in this speech?', type: 'textarea', required: false }
+      ]
     },
     
     // Wedding Guest Toast
     'wedding-guest-toast': {
-      base: [
-        { id: 'relationship', label: 'How do you know the couple?', type: 'text', required: true }
+    base: [
+        { id: 'relationship', label: 'How do you know them?', type: 'text', required: true }
       ],
       serious: [
         { id: 'q1', label: 'What do you most respect or admire about the couple and the relationship they have built together?', type: 'textarea', required: false },
@@ -294,9 +314,8 @@
 
     // Anniversary Party
     'anniversary-party': {
-      base: [
-        { id: 'relationship', label: 'How do you know the couple?', type: 'text', required: true },
-        { id: 'years', label: 'How many years are they celebrating?', type: 'text', required: false }
+    base: [
+        { id: 'relationship', label: 'How do you know them?', type: 'text', required: true }
       ],
       serious: [
         { id: 'q1', label: 'What do you admire most about the couple and the life they have built together?', type: 'textarea', required: false },
@@ -334,8 +353,8 @@
 
     // Company Anniversary
     'company-anniversary': {
-      base: [
-        { id: 'role', label: 'How long have you been with the company?', type: 'text', required: true }
+    base: [
+        { id: 'relationship', label: 'How do you know them?', type: 'text', required: true }
       ],
       serious: [
         { id: 'q1', label: 'How long have you been with the company, and what has your role or position been during that time?', type: 'textarea', required: false },
@@ -369,8 +388,8 @@
 
     // Engagement Party
     'engagement-party': {
-      base: [
-        { id: 'relationship', label: 'How do you know the couple?', type: 'text', required: true }
+    base: [
+        { id: 'relationship', label: 'How do you know them?', type: 'text', required: true }
       ],
       serious: [
         { id: 'q1', label: 'How did you first meet the couple, and what was your first impression of each of them?', type: 'textarea', required: false },
@@ -408,8 +427,8 @@
 
     // Baby Shower
     'baby-shower': {
-      base: [
-        { id: 'relationship', label: 'How do you know the parents-to-be?', type: 'text', required: true }
+    base: [
+        { id: 'relationship', label: 'How do you know them?', type: 'text', required: true }
       ],
       serious: [
         { id: 'q1', label: 'What is your relationship to the parents-to-be, and how long have you known them?', type: 'textarea', required: false },
@@ -447,8 +466,8 @@
 
     // Retirement Party
     'retirement-party': {
-      base: [
-        { id: 'relationship', label: 'How do you know the retiree?', type: 'text', required: true }
+    base: [
+        { id: 'relationship', label: 'How do you know them?', type: 'text', required: true }
       ],
       serious: [
         { id: 'q1', label: 'What is your relationship to the retiree, and how long have you known or worked with them?', type: 'textarea', required: false },
@@ -486,8 +505,8 @@
 
     // Achievement Celebration
     'achievement-celebration': {
-      base: [
-        { id: 'achievement', label: 'What achievement are we celebrating?', type: 'text', required: true }
+    base: [
+        { id: 'relationship', label: 'How do you know them?', type: 'text', required: true }
       ],
       serious: [
         { id: 'q1', label: 'What is the achievement being celebrated, and what exactly did you accomplish?', type: 'textarea', required: false },
@@ -525,8 +544,8 @@
 
     // Celebration of Life
     'celebration-of-life': {
-      base: [
-        { id: 'relationship', label: 'What was your relationship to the deceased?', type: 'text', required: true }
+    base: [
+        { id: 'relationship', label: 'How do you know them?', type: 'text', required: true }
       ],
       serious: [
         { id: 'q1', label: 'What was your relationship to the deceased, and how long did you know them?', type: 'textarea', required: false },
@@ -564,8 +583,8 @@
 
     // Charity Gala/Fundraiser
     'charity-gala-fundraiser': {
-      base: [
-        { id: 'charity', label: 'What charity or cause are we supporting?', type: 'text', required: true }
+    base: [
+        { id: 'relationship', label: 'How do you know them?', type: 'text', required: true }
       ],
       serious: [
         { id: 'q1', label: 'What charity, cause or organisation is the event supporting, and what is your connection to it?', type: 'textarea', required: false },
@@ -603,8 +622,8 @@
 
     // Tribute to Mentor
     'tribute-to-mentor': {
-      base: [
-        { id: 'mentor', label: 'Who is the mentor you are paying tribute to?', type: 'text', required: true }
+    base: [
+        { id: 'relationship', label: 'How do you know them?', type: 'text', required: true }
       ],
       serious: [
         { id: 'q1', label: 'What area, subject or stage of your life or career did this person mentor you in, and what was the nature of your relationship?', type: 'textarea', required: false },
@@ -642,8 +661,8 @@
 
     // Thank You Speech
     'thank-you-speech': {
-      base: [
-        { id: 'recipient', label: 'Who are you thanking?', type: 'text', required: true }
+    base: [
+        { id: 'relationship', label: 'How do you know them?', type: 'text', required: true }
       ],
       serious: [
         { id: 'q1', label: 'Who are you thanking, and what specifically are you thanking them for?', type: 'textarea', required: false },
@@ -681,8 +700,8 @@
 
     // Legacy Event
     'legacy-event': {
-      base: [
-        { id: 'legacy', label: 'What legacy is being celebrated?', type: 'text', required: true }
+    base: [
+        { id: 'relationship', label: 'How do you know them?', type: 'text', required: true }
       ],
       serious: [
         { id: 'q1', label: 'What is the legacy being recognised or celebrated, and what is the occasion?', type: 'textarea', required: false },

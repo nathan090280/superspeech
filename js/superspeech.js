@@ -722,43 +722,25 @@
   // Map occasion types to question sets (handles variations)
   var occasionMapping = {
     'best-man': 'best-man',
-    'best-woman': 'best-man',  // Same questions as best man
-    'best-person': 'best-man',
     'maid-matron-of-honour': 'maid-matron-of-honour',
     'groom': 'groom',
     'bride': 'bride',
-    'newlyweds': 'groom',  // Can use groom/bride questions
     'parent-of-bride-groom': 'parent-of-bride-groom',
-    'bridesmaid-groomsman': 'maid-matron-of-honour',  // Similar to maid of honour
-    'vow-renewal': 'groom',  // Similar to bride/groom
     'wedding-guest-toast': 'wedding-guest-toast',
+    'vow-renewal': 'groom',  // Similar to bride/groom
     'anniversary-party': 'anniversary-party',
-    'engagement-party': 'engagement-party',
-    'rehearsal-dinner': 'wedding-guest-toast',  // Similar to wedding guest toast
-    'sibling-of-bride-groom': 'best-man',  // Similar to best man
     'retirement-farewell': 'retirement-farewell',
-    'retirement-party': 'retirement-party',
     'promotion-welcome': 'retirement-farewell',  // Similar structure
     'keynote-panel': 'retirement-farewell',
-    'town-hall': 'retirement-farewell',
-    'product-launch-pitch': 'retirement-farewell',
     'award-acceptance': 'retirement-farewell',
     'award-presentation': 'retirement-farewell',
-    'team-building-event': 'retirement-farewell',
-    'sales-conference': 'retirement-farewell',
-    'leadership-summit': 'retirement-farewell',
     'company-anniversary': 'company-anniversary',
-    'training-workshop-introduction': 'retirement-farewell',
-    'big-birthday-30th-50th-etc-': 'big-birthday-30th-50th-etc-',
-    'anniversary': 'anniversary-party',  // Use anniversary-party questions
+    'big-birthday': 'big-birthday-30th-50th-etc-',
     'graduation': 'big-birthday-30th-50th-etc-',
     'bar-bat-mitzvah': 'big-birthday-30th-50th-etc-',
-    'quinceañera': 'big-birthday-30th-50th-etc-',
-    'housewarming-grand-opening': 'big-birthday-30th-50th-etc-',
     'engagement-party': 'engagement-party',
     'baby-shower': 'baby-shower',
-    'new-baby-announcement': 'baby-shower',  // Similar to baby shower
-    'school-reunion': 'big-birthday-30th-50th-etc-',
+    'retirement-party': 'retirement-party',
     'achievement-celebration': 'achievement-celebration',
     'eulogy': 'eulogy',
     'celebration-of-life': 'celebration-of-life',

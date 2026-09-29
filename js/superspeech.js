@@ -842,11 +842,9 @@
     
     // Add tone-specific questions if tone is selected
     if (tone && questionSet[tone]) {
-      // Randomly select 2-3 questions from the tone-specific set to keep it manageable
+      // Show ALL questions for the selected tone
       var toneQuestions = questionSet[tone];
-      var numToShow = Math.min(3, toneQuestions.length);
-      var selectedToneQuestions = toneQuestions.slice(0, numToShow);
-      questionsToShow = questionsToShow.concat(selectedToneQuestions);
+      questionsToShow = questionsToShow.concat(toneQuestions);
     }
     
     // Add "Subjects to steer clear from" at the end (always last, always optional)

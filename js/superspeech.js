@@ -269,8 +269,9 @@
         { id: 'impactCommunity', label: 'What impact did they have on the community?', type: 'textarea', required: false }
       ],
       banter: []
-    }
-// Wedding Guest Toast
+    },
+    
+    // Wedding Guest Toast
     'wedding-guest-toast': {
       base: [
         { id: 'relationship', label: 'How do you know the couple?', type: 'text', required: true }
@@ -357,22 +358,22 @@
         { id: 'q1', label: 'How long have you been with the company, and what has your role or position been during that time?', type: 'textarea', required: false },
         { id: 'q2', label: 'What do you remember most clearly about the company when you first joined, and what has changed since then?', type: 'textarea', required: false },
         { id: 'q3', label: 'What achievement, milestone or period of growth stands out most to you during your time with the business?', type: 'textarea', required: false },
-        { id: 'q4', label: 'What people, teams or individuals have made a particularly significant contribution to the company's journey?', type: 'textarea', required: false },
+        { id: 'q4', label: 'What people, teams or individuals have made a particularly significant contribution to the company\'s journey?', type: 'textarea', required: false },
         { id: 'q5', label: 'What do you think is most important to recognise or celebrate about the company at this anniversary?', type: 'textarea', required: false }
       ],
       humorous: [
         { id: 'q1', label: 'How long have you worked here, what was your job when you started, and how different is your role now?', type: 'textarea', required: false },
-        { id: 'q2', label: 'What is the biggest change you've witnessed since joining — apart from the number of meetings?', type: 'textarea', required: false },
+        { id: 'q2', label: 'What is the biggest change you\'ve witnessed since joining — apart from the number of meetings?', type: 'textarea', required: false },
         { id: 'q3', label: 'What memorable mistake, mishap, office tradition or bizarre incident from your time here still gets talked about?', type: 'textarea', required: false },
         { id: 'q4', label: 'Who or what has provided the most entertainment during your time at the company?', type: 'textarea', required: false },
-        { id: 'q5', label: 'If you could describe the company's journey so far using one ridiculous analogy, what would it be?', type: 'textarea', required: false }
+        { id: 'q5', label: 'If you could describe the company\'s journey so far using one ridiculous analogy, what would it be?', type: 'textarea', required: false }
       ],
       emotional: [
         { id: 'q1', label: 'How long have you been part of the company, and what has your journey through the business meant to you personally?', type: 'textarea', required: false },
         { id: 'q2', label: 'What moment during your time here made you feel particularly proud to be part of the company?', type: 'textarea', required: false },
         { id: 'q3', label: 'Which colleagues, mentors or teams have had the greatest impact on you during your time here?', type: 'textarea', required: false },
         { id: 'q4', label: 'Is there a particular challenge, achievement or period of change that brought the people in the company together?', type: 'textarea', required: false },
-        { id: 'q5', label: 'When you look back at the company's journey, what are you most grateful to have been part of?', type: 'textarea', required: false }
+        { id: 'q5', label: 'When you look back at the company\'s journey, what are you most grateful to have been part of?', type: 'textarea', required: false }
       ],
       banter: [
         { id: 'q1', label: 'How long have you been here, what did you actually do when you started, and how much of that job do you still understand?', type: 'textarea', required: false },
@@ -398,7 +399,7 @@
       ],
       humorous: [
         { id: 'q1', label: 'How did they meet, and what did you honestly think when you first heard they were getting together?', type: 'textarea', required: false },
-        { id: 'q2', label: 'What is the funniest or most ridiculous thing you've witnessed since they became a couple?', type: 'textarea', required: false },
+        { id: 'q2', label: 'What is the funniest or most ridiculous thing you\'ve witnessed since they became a couple?', type: 'textarea', required: false },
         { id: 'q3', label: 'What habit, quirk or personality trait does one of them have that the other has somehow agreed to tolerate?', type: 'textarea', required: false },
         { id: 'q4', label: 'Was there a moment when you thought, "Yep, these two are definitely going to get married"?', type: 'textarea', required: false },
         { id: 'q5', label: 'What embarrassing, awkward or questionable story about either of them can safely be told in front of both families?', type: 'textarea', required: false },
@@ -413,10 +414,10 @@
         { id: 'q6', label: 'If you could give them one heartfelt message to carry with them towards their wedding and beyond, what would you say?', type: 'textarea', required: false }
       ],
       banter: [
-        { id: 'q1', label: 'How did these two actually get together, and at what point did you realise this was going to become everyone else's problem?', type: 'textarea', required: false },
+        { id: 'q1', label: 'How did these two actually get together, and at what point did you realise this was going to become everyone else\'s problem?', type: 'textarea', required: false },
         { id: 'q2', label: 'What is the most ridiculous thing either of them has done since they became a couple?', type: 'textarea', required: false },
         { id: 'q3', label: 'Which of their habits or personality defects makes you wonder how they have made it this far?', type: 'textarea', required: false },
-        { id: 'q4', label: 'What is the most embarrassing story about either of them that is technically safe to tell now that they're engaged?', type: 'textarea', required: false },
+        { id: 'q4', label: 'What is the most embarrassing story about either of them that is technically safe to tell now that they\'re engaged?', type: 'textarea', required: false },
         { id: 'q5', label: 'If their relationship came with a warning label, what would it say?', type: 'textarea', required: false },
         { id: 'q6', label: 'What brutally honest piece of advice would you give them before they make the catastrophic decision to get married?', type: 'textarea', required: false }
       ]
@@ -455,9 +456,9 @@
         { id: 'q1', label: 'Which parent is actually going to be in charge once the baby arrives, and what evidence do you have?', type: 'textarea', required: false },
         { id: 'q2', label: 'Who is most likely to panic at 3 a.m., and who is most likely to Google the symptoms and make everything considerably worse?', type: 'textarea', required: false },
         { id: 'q3', label: 'What existing habit, personality flaw or questionable lifestyle choice is the baby about to inherit?', type: 'textarea', required: false },
-        { id: 'q4', label: 'What is the funniest thing either parent has ever done that makes you think, "Christ, they're responsible for a child now"?', type: 'textarea', required: false },
-        { id: 'q5', label: 'If the baby could read the parents' history before being born, what would they immediately have questions about?', type: 'textarea', required: false },
-        { id: 'q6', label: 'What brutally honest piece of advice would you give the parents before they discover that absolutely nobody knows what they're doing?', type: 'textarea', required: false }
+        { id: 'q4', label: 'What is the funniest thing either parent has ever done that makes you think, "Christ, they\'re responsible for a child now"?', type: 'textarea', required: false },
+        { id: 'q5', label: 'If the baby could read the parents\' history before being born, what would they immediately have questions about?', type: 'textarea', required: false },
+        { id: 'q6', label: 'What brutally honest piece of advice would you give the parents before they discover that absolutely nobody knows what they\'re doing?', type: 'textarea', required: false }
       ]
     },
 
@@ -519,7 +520,7 @@
         { id: 'q3', label: 'What went wrong along the way, and which disaster are you now able to laugh about?', type: 'textarea', required: false },
         { id: 'q4', label: 'Who deserves credit for helping you get there — and who made the whole process considerably harder than it needed to be?', type: 'textarea', required: false },
         { id: 'q5', label: 'At what point did you think, "Bloody hell, I might actually pull this off"?', type: 'textarea', required: false },
-        { id: 'q6', label: 'Now that you've achieved it, what completely unnecessary or ridiculous thing are you going to do next?', type: 'textarea', required: false }
+        { id: 'q6', label: 'Now that you\'ve achieved it, what completely unnecessary or ridiculous thing are you going to do next?', type: 'textarea', required: false }
       ],
       emotional: [
         { id: 'q1', label: 'What is the achievement being celebrated, and what does reaching this milestone mean to you?', type: 'textarea', required: false },
@@ -530,12 +531,12 @@
         { id: 'q6', label: 'If you could look back at yourself before you began and say one thing, what would you want to tell that person?', type: 'textarea', required: false }
       ],
       banter: [
-        { id: 'q1', label: 'What exactly have you achieved, and let's be honest — how surprised are you that you actually managed it?', type: 'textarea', required: false },
+        { id: 'q1', label: 'What exactly have you achieved, and let\'s be honest — how surprised are you that you actually managed it?', type: 'textarea', required: false },
         { id: 'q2', label: 'What went spectacularly wrong on the way there, and what story absolutely has to be told tonight?', type: 'textarea', required: false },
         { id: 'q3', label: 'Who helped you achieve it, and who should probably receive some sort of formal apology for having to put up with you?', type: 'textarea', required: false },
-        { id: 'q4', label: 'What was your lowest point during the process, and how close were you to saying, "Fuck this, I'm off"?', type: 'textarea', required: false },
-        { id: 'q5', label: 'What is the most ridiculous thing you did in pursuit of this achievement that, in hindsight, probably wasn't necessary?', type: 'textarea', required: false },
-        { id: 'q6', label: 'Now that you've reached the summit, what is the next completely unnecessary challenge you're likely to set yourself?', type: 'textarea', required: false }
+        { id: 'q4', label: 'What was your lowest point during the process, and how close were you to saying, "Fuck this, I\'m off"?', type: 'textarea', required: false },
+        { id: 'q5', label: 'What is the most ridiculous thing you did in pursuit of this achievement that, in hindsight, probably wasn\'t necessary?', type: 'textarea', required: false },
+        { id: 'q6', label: 'Now that you\'ve reached the summit, what is the next completely unnecessary challenge you\'re likely to set yourself?', type: 'textarea', required: false }
       ]
     },
 
@@ -586,7 +587,7 @@
       serious: [
         { id: 'q1', label: 'What charity, cause or organisation is the event supporting, and what is your connection to it?', type: 'textarea', required: false },
         { id: 'q2', label: 'Why is this cause important to you, the organisation or the people you are here to support?', type: 'textarea', required: false },
-        { id: 'q3', label: 'What difference does the charity's work make, and is there a particular example that demonstrates its impact?', type: 'textarea', required: false },
+        { id: 'q3', label: 'What difference does the charity\'s work make, and is there a particular example that demonstrates its impact?', type: 'textarea', required: false },
         { id: 'q4', label: 'What achievement, milestone or progress has the organisation made that deserves recognition tonight?', type: 'textarea', required: false },
         { id: 'q5', label: 'Who deserves particular thanks for their work, support, fundraising or contribution to the cause?', type: 'textarea', required: false },
         { id: 'q6', label: 'What would you like guests to take away from tonight and feel inspired to contribute towards?', type: 'textarea', required: false }
@@ -594,7 +595,7 @@
       humorous: [
         { id: 'q1', label: 'What charity, cause or organisation are we raising money for, and how did you become involved with it?', type: 'textarea', required: false },
         { id: 'q2', label: 'What funny, unexpected or slightly chaotic thing has happened while supporting the cause?', type: 'textarea', required: false },
-        { id: 'q3', label: 'What is the most ridiculous fundraising idea, challenge or event you've encountered — and did it actually work?', type: 'textarea', required: false },
+        { id: 'q3', label: 'What is the most ridiculous fundraising idea, challenge or event you\'ve encountered — and did it actually work?', type: 'textarea', required: false },
         { id: 'q4', label: 'Who involved with the charity deserves a gentle public roasting for their particular contribution, habit or fundraising obsession?', type: 'textarea', required: false },
         { id: 'q5', label: 'What is the strangest thing you have done, worn, eaten, endured or persuaded other people to do in the name of raising money?', type: 'textarea', required: false },
         { id: 'q6', label: 'What can you say tonight that might persuade people to part with their money while still keeping a smile on their faces?', type: 'textarea', required: false }
@@ -602,18 +603,18 @@
       emotional: [
         { id: 'q1', label: 'What charity, cause or organisation are we supporting, and what is your personal connection to it?', type: 'textarea', required: false },
         { id: 'q2', label: 'What personal experience first made this cause important to you?', type: 'textarea', required: false },
-        { id: 'q3', label: 'Can you share a story that shows the real difference this charity makes to someone's life?', type: 'textarea', required: false },
+        { id: 'q3', label: 'Can you share a story that shows the real difference this charity makes to someone\'s life?', type: 'textarea', required: false },
         { id: 'q4', label: 'Who has inspired you through their connection to the cause, and what have they taught you?', type: 'textarea', required: false },
         { id: 'q5', label: 'What does the support of everyone in this room mean to the people or communities the charity serves?', type: 'textarea', required: false },
         { id: 'q6', label: 'If you could leave everyone tonight with one heartfelt reason to support this cause, what would you want them to remember?', type: 'textarea', required: false }
       ],
       banter: [
         { id: 'q1', label: 'What exactly are we raising money for, and how on earth did you end up getting involved?', type: 'textarea', required: false },
-        { id: 'q2', label: 'What is the most ridiculous thing you've done in the name of fundraising — and would you willingly do it again?', type: 'textarea', required: false },
+        { id: 'q2', label: 'What is the most ridiculous thing you\'ve done in the name of fundraising — and would you willingly do it again?', type: 'textarea', required: false },
         { id: 'q3', label: 'What fundraising challenge, event or idea sounded absolutely terrible when suggested but somehow became a success?', type: 'textarea', required: false },
         { id: 'q4', label: 'Who deserves to be publicly mocked tonight for their heroic, ridiculous or slightly obsessive approach to raising money?', type: 'textarea', required: false },
-        { id: 'q5', label: 'What is the strangest donation, fundraising stunt or attempt to extract money from innocent members of the public you've encountered?', type: 'textarea', required: false },
-        { id: 'q6', label: 'If everyone's wallets could hear one final argument before tonight's donations, what would you say to them?', type: 'textarea', required: false }
+        { id: 'q5', label: 'What is the strangest donation, fundraising stunt or attempt to extract money from innocent members of the public you\'ve encountered?', type: 'textarea', required: false },
+        { id: 'q6', label: 'If everyone\'s wallets could hear one final argument before tonight\'s donations, what would you say to them?', type: 'textarea', required: false }
       ]
     },
 
@@ -711,7 +712,7 @@
       humorous: [
         { id: 'q1', label: 'What exactly are we here to celebrate, and how did this whole legacy come about?', type: 'textarea', required: false },
         { id: 'q2', label: 'Who or what is responsible for the legacy, and what is the funniest thing you remember about them or it?', type: 'textarea', required: false },
-        { id: 'q3', label: 'What story, incident or memorable moment best sums up what we're celebrating?', type: 'textarea', required: false },
+        { id: 'q3', label: 'What story, incident or memorable moment best sums up what we\'re celebrating?', type: 'textarea', required: false },
         { id: 'q4', label: 'What unusual habit, tradition, personality trait or bit of history has become part of the legacy?', type: 'textarea', required: false },
         { id: 'q5', label: 'What would probably surprise people most about how this legacy came about?', type: 'textarea', required: false },
         { id: 'q6', label: 'If the legacy could be summed up in one amusing story, what would you tell?', type: 'textarea', required: false }

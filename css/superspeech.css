@@ -1105,6 +1105,19 @@ iframe#netlify-identity-widget {
   gap: 1rem;
   margin-top: 1rem;
   justify-content: center;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 600px) {
+  .speech-actions {
+    gap: 0.5rem;
+  }
+
+  .speech-actions .action-btn {
+    flex: 1 1 calc(50% - 0.5rem);
+    padding: 0.75rem 0.5rem;
+    text-align: center;
+  }
 }
 
 .action-btn {

@@ -761,47 +761,232 @@
       ]
     },
     
-    // Charity Gala/Fundraiser (NOT memorial - people are alive!)
-    'charity-gala-fundraiser': {
-      base: [
-        { id: 'causeSupported', label: 'What cause or charity are you supporting?', type: 'text', required: true },
-        { id: 'yourRole', label: 'What is your role in this event/organization?', type: 'text', required: true },
-        { id: 'impactStory', label: 'Share a story about the impact this cause has made', type: 'textarea', required: true }
-      ],
-      humorous: [
-        { id: 'funnyFundraising', label: 'Any funny fundraising moments or stories?', type: 'textarea', required: false },
-        { id: 'donorAppreciation', label: 'How can you thank donors in a lighthearted way?', type: 'textarea', required: false }
-      ],
-      emotional: [
-        { id: 'personalConnection', label: 'What is your personal connection to this cause?', type: 'textarea', required: true },
-        { id: 'whoHelped', label: 'Who has been helped by this organization?', type: 'textarea', required: false },
-        { id: 'futureHope', label: 'What future do you hope to create through this cause?', type: 'textarea', required: false }
-      ],
-      serious: [
-        { id: 'missionStatement', label: 'What is the mission and purpose of this cause?', type: 'textarea', required: false },
-        { id: 'accomplishments', label: 'What has been accomplished so far?', type: 'textarea', required: false },
-        { id: 'callToAction', label: 'What action do you want attendees to take?', type: 'textarea', required: false }
-      ],
-      banter: []
-    },
-    
     // Memorial - Eulogy
     'eulogy': {
-      base: [
-        { id: 'relationship', label: 'What was your relationship to the deceased?', type: 'text', required: true },
-        { id: 'definingQuality', label: 'What was their most defining quality or characteristic?', type: 'textarea', required: true }
-      ],
-      humorous: [],
-      emotional: [
-        { id: 'favoriteMemory', label: 'What is your most cherished memory with them?', type: 'textarea', required: true },
-        { id: 'taught', label: 'What did they teach you or others?', type: 'textarea', required: false },
-        { id: 'legacy', label: 'What legacy do they leave behind?', type: 'textarea', required: true }
-      ],
+      base: [],
+      showAllToneQuestions: true,
       serious: [
-        { id: 'values', label: 'What values did they embody?', type: 'textarea', required: false },
-        { id: 'impactCommunity', label: 'What impact did they have on the community?', type: 'textarea', required: false }
+        { id: 'relationshipDeceased', label: 'What was your relationship to the deceased, and how long did you know them?', type: 'textarea', required: true },
+        { id: 'definedQualities', label: 'What qualities, values or characteristics best defined them as a person?', type: 'textarea', required: true },
+        { id: 'deservesRecognition', label: 'What achievement, contribution or aspect of their life do you think deserves particular recognition?', type: 'textarea', required: true },
+        { id: 'meaningfulMemory', label: 'What is the most meaningful memory you have of them, or the moment that best captures who they were?', type: 'textarea', required: true },
+        { id: 'meantToYou', label: 'What did they mean to you, your family, friends or wider community?', type: 'textarea', required: true },
+        { id: 'rememberThem', label: 'What would you most like people to remember about them after today?', type: 'textarea', required: true }
       ],
-      banter: []
+      humorous: [
+        { id: 'putUpWith', label: 'What was your relationship to the deceased, and how long did you have to put up with them?', type: 'textarea', required: true },
+        { id: 'neverGotUsedTo', label: 'What funny habit, personality trait or quirk of theirs could you never quite get used to?', type: 'textarea', required: true },
+        { id: 'funniestStory', label: 'What is the funniest, most embarrassing or most ridiculous story about them that can be told appropriately today?', type: 'textarea', required: true },
+        { id: 'yepThatsThem', label: 'What was something they regularly did that would make everyone who knew them immediately think, "Yep, that\'s them"?', type: 'textarea', required: true },
+        { id: 'memorableMishap', label: 'What memorable mishap, bad decision or piece of questionable advice from them still makes you laugh?', type: 'textarea', required: true },
+        { id: 'heckleAbout', label: 'If they could hear this speech, what would they probably heckle you about for getting wrong?', type: 'textarea', required: true }
+      ],
+      emotional: [
+        { id: 'meantPersonally', label: 'What was your relationship to the deceased, and what did they mean to you personally?', type: 'textarea', required: true },
+        { id: 'treasuredMemory', label: 'What is your most treasured memory of them?', type: 'textarea', required: true },
+        { id: 'touchedMost', label: 'What quality, kindness or part of their character touched your life most deeply?', type: 'textarea', required: true },
+        { id: 'influencedLives', label: 'How did they influence or shape the lives of the people around them?', type: 'textarea', required: true },
+        { id: 'missMost', label: 'What do you think you will miss most about them now that they are gone?', type: 'textarea', required: true },
+        { id: 'finalThing', label: 'If you could say one final thing directly to them today, what would you want them to know?', type: 'textarea', required: true }
+      ],
+      banter: [
+        { id: 'putYouThrough', label: 'What was your relationship to the deceased, and what exactly did they put you through over the years?', type: 'textarea', required: true },
+        { id: 'gloriouslyAnnoying', label: 'What was their most gloriously annoying habit or personality trait?', type: 'textarea', required: true },
+        { id: 'cryingWithLaughter', label: 'What story about them would have the people who knew them best crying with laughter — rather than crying for the usual reasons?', type: 'textarea', required: true },
+        { id: 'ridiculousLegend', label: 'What completely ridiculous thing did they believe, do or insist upon that became part of their legend?', type: 'textarea', required: true },
+        { id: 'greatestBadAdvice', label: 'What was their greatest piece of bad advice, questionable decision or spectacularly unnecessary bit of behaviour?', type: 'textarea', required: true },
+        { id: 'shoutingAtYou', label: 'If they were here now, what would they be shouting at you for saying in this speech?', type: 'textarea', required: true }
+      ]
+    },
+
+    // Memorial - Celebration of Life
+    'celebration-of-life': {
+      base: [],
+      showAllToneQuestions: true,
+      serious: [
+        { id: 'relationshipHowLong', label: 'What was your relationship to the deceased, and how long did you know them?', type: 'textarea', required: true },
+        { id: 'definedThem', label: 'What qualities, values or characteristics best defined them as a person?', type: 'textarea', required: true },
+        { id: 'proudToRemember', label: 'What achievement, contribution or aspect of their life are you most proud to remember?', type: 'textarea', required: true },
+        { id: 'capturesThem', label: 'What memory best captures the person they were and the life they lived?', type: 'textarea', required: true },
+        { id: 'impactOnPeople', label: 'What impact did they have on the people, family, community or world around them?', type: 'textarea', required: true },
+        { id: 'carryForward', label: 'What would you most like everyone here to remember and carry forward about them?', type: 'textarea', required: true }
+      ],
+      humorous: [
+        { id: 'pleasureOrMisfortune', label: 'What was your relationship to the deceased, and how long did you have the pleasure — or misfortune — of knowing them?', type: 'textarea', required: true },
+        { id: 'unmistakablyThem', label: 'What funny habit, quirk or personality trait made them unmistakably themselves?', type: 'textarea', required: true },
+        { id: 'exactlyLikeThem', label: 'What is the funniest story about them that would have everyone who knew them saying, "That sounds exactly like them"?', type: 'textarea', required: true },
+        { id: 'sumsUpCharacter', label: 'What memorable mishap, eccentricity or questionable decision perfectly sums up their character?', type: 'textarea', required: true },
+        { id: 'knownFor', label: 'What phrase, saying, joke or bit of behaviour were they particularly known for?', type: 'textarea', required: true },
+        { id: 'takeThePiss', label: 'If they were here today, what part of this speech would they probably interrupt, correct or take the piss out of you for?', type: 'textarea', required: true }
+      ],
+      emotional: [
+        { id: 'meanPersonally', label: 'What was your relationship to the deceased, and what did they mean to you personally?', type: 'textarea', required: true },
+        { id: 'treasureMost', label: 'What is the memory of them that you treasure most?', type: 'textarea', required: true },
+        { id: 'lastingImpression', label: 'What quality, kindness or part of their character made such a lasting impression on you?', type: 'textarea', required: true },
+        { id: 'feltLoved', label: 'Can you describe a moment when they made you — or someone else — feel particularly loved, supported or valued?', type: 'textarea', required: true },
+        { id: 'neverForgotten', label: 'What did they bring to the lives of their family, friends and the people around them that you hope will never be forgotten?', type: 'textarea', required: true },
+        { id: 'celebrateOneThing', label: 'If you could celebrate one thing about the life they lived, what would you choose and why?', type: 'textarea', required: true }
+      ],
+      banter: [
+        { id: 'troubleTogether', label: 'What was your relationship to the deceased, and what sort of trouble did you regularly find yourselves getting into together?', type: 'textarea', required: true },
+        { id: 'ridiculousHabit', label: 'What was their most ridiculous habit, obsession or personality trait that everyone who knew them will immediately recognise?', type: 'textarea', required: true },
+        { id: 'onlyBeTrue', label: 'What story about them is so ridiculous that it could only possibly be true?', type: 'textarea', required: true },
+        { id: 'hillToDieOn', label: 'What completely unnecessary argument, eccentric opinion or hill were they prepared to die on?', type: 'textarea', required: true },
+        { id: 'rememberThat', label: 'What piece of classic behaviour from them would have everyone in the room saying, "Oh God, I remember that"?', type: 'textarea', required: true },
+        { id: 'fiveMinutes', label: 'If they could magically appear for five minutes during this celebration, what would they immediately take the piss out of?', type: 'textarea', required: true }
+      ]
+    },
+
+    // Memorial - Charity Gala / Fundraiser
+    'charity-gala-fundraiser': {
+      base: [],
+      showAllToneQuestions: true,
+      serious: [
+        { id: 'causeConnection', label: 'What charity, cause or organisation is the event supporting, and what is your connection to it?', type: 'textarea', required: true },
+        { id: 'whyCauseImportant', label: 'Why is this cause important to you, the organisation or the people you are here to support?', type: 'textarea', required: true },
+        { id: 'differenceExample', label: 'What difference does the charity\'s work make, and is there a particular example that demonstrates its impact?', type: 'textarea', required: true },
+        { id: 'orgMilestone', label: 'What achievement, milestone or progress has the organisation made that deserves recognition tonight?', type: 'textarea', required: true },
+        { id: 'deservesThanks', label: 'Who deserves particular thanks for their work, support, fundraising or contribution to the cause?', type: 'textarea', required: true },
+        { id: 'inspiredToContribute', label: 'What would you like guests to take away from tonight and feel inspired to contribute towards?', type: 'textarea', required: true }
+      ],
+      humorous: [
+        { id: 'howInvolved', label: 'What charity, cause or organisation are we raising money for, and how did you become involved with it?', type: 'textarea', required: true },
+        { id: 'chaoticThing', label: 'What funny, unexpected or slightly chaotic thing has happened while supporting the cause?', type: 'textarea', required: true },
+        { id: 'ridiculousFundraising', label: 'What is the most ridiculous fundraising idea, challenge or event you\'ve encountered — and did it actually work?', type: 'textarea', required: true },
+        { id: 'gentleRoasting', label: 'Who involved with the charity deserves a gentle public roasting for their particular contribution, habit or fundraising obsession?', type: 'textarea', required: true },
+        { id: 'strangestDone', label: 'What is the strangest thing you have done, worn, eaten, endured or persuaded other people to do in the name of raising money?', type: 'textarea', required: true },
+        { id: 'partWithMoney', label: 'What can you say tonight that might persuade people to part with their money while still keeping a smile on their faces?', type: 'textarea', required: true }
+      ],
+      emotional: [
+        { id: 'personalConnection', label: 'What charity, cause or organisation are we supporting, and what is your personal connection to it?', type: 'textarea', required: true },
+        { id: 'firstImportant', label: 'What personal experience first made this cause important to you?', type: 'textarea', required: true },
+        { id: 'realDifferenceStory', label: 'Can you share a story that shows the real difference this charity makes to someone\'s life?', type: 'textarea', required: true },
+        { id: 'whoInspired', label: 'Who has inspired you through their connection to the cause, and what have they taught you?', type: 'textarea', required: true },
+        { id: 'supportMeans', label: 'What does the support of everyone in this room mean to the people or communities the charity serves?', type: 'textarea', required: true },
+        { id: 'oneReason', label: 'If you could leave everyone tonight with one heartfelt reason to support this cause, what would you want them to remember?', type: 'textarea', required: true }
+      ],
+      banter: [
+        { id: 'howEndUp', label: 'What exactly are we raising money for, and how on earth did you end up getting involved?', type: 'textarea', required: true },
+        { id: 'doItAgain', label: 'What is the most ridiculous thing you\'ve done in the name of fundraising — and would you willingly do it again?', type: 'textarea', required: true },
+        { id: 'soundedTerrible', label: 'What fundraising challenge, event or idea sounded absolutely terrible when suggested but somehow became a success?', type: 'textarea', required: true },
+        { id: 'publiclyMocked', label: 'Who deserves to be publicly mocked tonight for their heroic, ridiculous or slightly obsessive approach to raising money?', type: 'textarea', required: true },
+        { id: 'extractMoney', label: 'What is the strangest donation, fundraising stunt or attempt to extract money from innocent members of the public you\'ve encountered?', type: 'textarea', required: true },
+        { id: 'walletsArgument', label: 'If everyone\'s wallets could hear one final argument before tonight\'s donations, what would you say to them?', type: 'textarea', required: true }
+      ]
+    },
+
+    // Memorial - Tribute to Mentor
+    'tribute-to-mentor': {
+      base: [],
+      showAllToneQuestions: true,
+      serious: [
+        { id: 'mentoredIn', label: 'What area, subject or stage of your life or career did this person mentor you in, and what was the nature of your relationship?', type: 'textarea', required: true },
+        { id: 'greatestImpact', label: 'What knowledge, experience or guidance did they give you that had the greatest impact?', type: 'textarea', required: true },
+        { id: 'adviceStayed', label: 'Was there a particular piece of advice or lesson from them that has stayed with you?', type: 'textarea', required: true },
+        { id: 'influencedDevelopment', label: 'How did their mentorship influence your development, confidence or direction?', type: 'textarea', required: true },
+        { id: 'effectiveQualities', label: 'What qualities made them such an effective or respected mentor?', type: 'textarea', required: true },
+        { id: 'thankForCarry', label: 'What would you most like to thank them for, and what do you hope to carry forward from their influence?', type: 'textarea', required: true }
+      ],
+      humorous: [
+        { id: 'endedUpUnder', label: 'What did they mentor you in, and how did you first end up under their guidance?', type: 'textarea', required: true },
+        { id: 'funniestLesson', label: 'What is the funniest lesson, piece of advice or memorable exchange you had with them?', type: 'textarea', required: true },
+        { id: 'drumIntoYou', label: 'What habit, phrase or particular way of doing things did they repeatedly try to drum into you?', type: 'textarea', required: true },
+        { id: 'watchedYouMake', label: 'What mistake did they have to watch you make before you finally listened to them?', type: 'textarea', required: true },
+        { id: 'mentoringHabit', label: 'What amusing personality trait or mentoring habit made them unmistakably themselves?', type: 'textarea', required: true },
+        { id: 'finalAdvice', label: 'If they could give you one final piece of advice today, what would it probably be — and would you actually listen this time?', type: 'textarea', required: true }
+      ],
+      emotional: [
+        { id: 'importantRole', label: 'What did they mentor you in, and how did they come to play such an important role in your life?', type: 'textarea', required: true },
+        { id: 'sawInYou', label: 'What did they see in you that perhaps you did not yet see in yourself?', type: 'textarea', required: true },
+        { id: 'changedDirection', label: 'Is there a particular lesson, conversation or moment with them that fundamentally changed your direction?', type: 'textarea', required: true },
+        { id: 'affectedConfidence', label: 'How did their support affect your confidence, ambitions or belief in what you could achieve?', type: 'textarea', required: true },
+        { id: 'wisdomStayed', label: 'What part of their character or wisdom has stayed with you long after their guidance was needed?', type: 'textarea', required: true },
+        { id: 'meantToYou', label: 'If you could tell them what their mentorship ultimately meant to you, what would you want them to know?', type: 'textarea', required: true }
+      ],
+      banter: [
+        { id: 'becameTheirProblem', label: 'What did they actually mentor you in, and how did you end up becoming their problem?', type: 'textarea', required: true },
+        { id: 'ignoredAdvice', label: 'What is the most memorable piece of advice they gave you — whether you followed it or spectacularly ignored it?', type: 'textarea', required: true },
+        { id: 'admittedRight', label: 'What mistake did you repeatedly make despite them telling you not to, and how long did it take before you finally admitted they were right?', type: 'textarea', required: true },
+        { id: 'stillHearThem', label: 'What ridiculous phrase, rule, habit or bit of wisdom did they inflict upon you so often that you can still hear them saying it?', type: 'textarea', required: true },
+        { id: 'competentHuman', label: 'What is the funniest thing that happened between you while they were attempting to turn you into a competent human being?', type: 'textarea', required: true },
+        { id: 'finalReport', label: 'If they had to write your final report as their mentee, what brutally honest comment would they put at the bottom?', type: 'textarea', required: true }
+      ]
+    },
+
+    // Memorial - Thank You Speech
+    'thank-you-speech': {
+      base: [],
+      showAllToneQuestions: true,
+      serious: [
+        { id: 'whoThanking', label: 'Who are you thanking, and what specifically are you thanking them for?', type: 'textarea', required: true },
+        { id: 'meaningfulDifference', label: 'What did they do, contribute or provide that made a meaningful difference to you?', type: 'textarea', required: true },
+        { id: 'especiallyImportant', label: 'Was there a particular moment when their help or support was especially important?', type: 'textarea', required: true },
+        { id: 'appreciateQualities', label: 'What qualities or actions of theirs do you particularly appreciate?', type: 'textarea', required: true },
+        { id: 'affectedOutcome', label: 'How has their support affected you, your situation or the outcome you are celebrating?', type: 'textarea', required: true },
+        { id: 'genuinelyGrateful', label: 'What would you most like them to know about how genuinely grateful you are?', type: 'textarea', required: true }
+      ],
+      humorous: [
+        { id: 'neededHelp', label: 'Who are you thanking, what did they do for you, and how did you somehow end up needing their help in the first place?', type: 'textarea', required: true },
+        { id: 'chaoticAlongWay', label: 'What funny, unexpected or slightly chaotic thing happened along the way?', type: 'textarea', required: true },
+        { id: 'putUpWithYou', label: 'Did they have to put up with any of your bad decisions, incompetence or questionable behaviour while helping you?', type: 'textarea', required: true },
+        { id: 'amusingQuality', label: 'What amusing quality, habit or characteristic of theirs deserves a mention?', type: 'textarea', required: true },
+        { id: 'savedTheDay', label: 'Is there a particular moment when their help saved the day — or at least stopped things getting considerably worse?', type: 'textarea', required: true },
+        { id: 'entertainingThanks', label: 'If you had to thank them in the most entertaining way possible, what would you absolutely have to mention?', type: 'textarea', required: true }
+      ],
+      emotional: [
+        { id: 'meanToYou', label: 'Who are you thanking, why are you thanking them, and what do they mean to you personally?', type: 'textarea', required: true },
+        { id: 'genuinelyNeeded', label: 'What did they do for you at a time when you genuinely needed their support?', type: 'textarea', required: true },
+        { id: 'neverForget', label: 'Is there a particular moment of kindness, generosity or encouragement that you will never forget?', type: 'textarea', required: true },
+        { id: 'changedCircumstances', label: 'How did their actions affect you or change your circumstances?', type: 'textarea', required: true },
+        { id: 'particularlyMeaningful', label: 'What is it about this person that makes their support particularly meaningful to you?', type: 'textarea', required: true },
+        { id: 'oneThing', label: 'If you could make sure they understood just one thing about how much their support meant to you, what would you say?', type: 'textarea', required: true }
+      ],
+      banter: [
+        { id: 'gotInvolvedIn', label: 'Who are you thanking, why do they deserve your thanks, and what exactly did they get themselves involved in?', type: 'textarea', required: true },
+        { id: 'ridiculousSituation', label: 'What ridiculous situation did they have to endure while helping you?', type: 'textarea', required: true },
+        { id: 'deservesApology', label: 'What did they have to put up with from you that probably deserves an apology alongside the thank-you?', type: 'textarea', required: true },
+        { id: 'hasToBeIncluded', label: 'What funny habit, personality trait or moment from them absolutely has to be included?', type: 'textarea', required: true },
+        { id: 'savingYourArse', label: 'What is the most entertaining example of them saving your arse, despite probably wondering why they bothered?', type: 'textarea', required: true },
+        { id: 'inappropriateAward', label: 'If this thank-you came with an award, what completely inappropriate award would you give them?', type: 'textarea', required: true }
+      ]
+    },
+
+    // Memorial - Legacy Event
+    'legacy-event': {
+      base: [],
+      showAllToneQuestions: true,
+      serious: [
+        { id: 'legacyOccasion', label: 'What is the legacy being recognised or celebrated, and what is the occasion?', type: 'textarea', required: true },
+        { id: 'heartOfLegacy', label: 'Who or what is at the heart of that legacy, and what have they achieved or contributed?', type: 'textarea', required: true },
+        { id: 'mostSignificant', label: 'What aspect of this legacy do you think is most significant?', type: 'textarea', required: true },
+        { id: 'bestRepresents', label: 'Is there a particular achievement, story or moment that best represents what is being celebrated?', type: 'textarea', required: true },
+        { id: 'affectedPeople', label: 'How has this person, group, organisation, idea or achievement affected the people around it?', type: 'textarea', required: true },
+        { id: 'continueEndure', label: 'What do you hope will continue or endure as a result of this legacy?', type: 'textarea', required: true }
+      ],
+      humorous: [
+        { id: 'cameAbout', label: 'What exactly are we here to celebrate, and how did this whole legacy come about?', type: 'textarea', required: true },
+        { id: 'responsibleFunny', label: 'Who or what is responsible for the legacy, and what is the funniest thing you remember about them or it?', type: 'textarea', required: true },
+        { id: 'sumsItUp', label: 'What story, incident or memorable moment best sums up what we\'re celebrating?', type: 'textarea', required: true },
+        { id: 'unusualTradition', label: 'What unusual habit, tradition, personality trait or bit of history has become part of the legacy?', type: 'textarea', required: true },
+        { id: 'surpriseMost', label: 'What would probably surprise people most about how this legacy came about?', type: 'textarea', required: true },
+        { id: 'oneAmusingStory', label: 'If the legacy could be summed up in one amusing story, what would you tell?', type: 'textarea', required: true }
+      ],
+      emotional: [
+        { id: 'meanPersonally', label: 'What are we here to celebrate, and what does this legacy mean to you personally?', type: 'textarea', required: true },
+        { id: 'greatestInfluence', label: 'Who or what has had the greatest influence on the legacy, and why has that influence mattered?', type: 'textarea', required: true },
+        { id: 'capturesIt', label: 'Is there a particular memory or moment that captures what this legacy means to you?', type: 'textarea', required: true },
+        { id: 'changedLives', label: 'How has this person, group, organisation, achievement or idea changed the lives of others?', type: 'textarea', required: true },
+        { id: 'neverForgotten', label: 'What part of the legacy do you hope will never be forgotten?', type: 'textarea', required: true },
+        { id: 'carryForward', label: 'What would you most like people to carry forward from what we are celebrating today?', type: 'textarea', required: true }
+      ],
+      banter: [
+        { id: 'becameALegacy', label: 'What exactly are we celebrating, and how the hell did it become a legacy?', type: 'textarea', required: true },
+        { id: 'mostRidiculousThing', label: 'Who or what is responsible for it, and what is the most ridiculous thing associated with them or it?', type: 'textarea', required: true },
+        { id: 'sheerNonsense', label: 'What story best demonstrates the sheer nonsense, chaos or questionable decisions behind this legacy?', type: 'textarea', required: true },
+        { id: 'survivedLong', label: 'What bizarre habit, tradition, incident or achievement has somehow survived long enough to become part of the history?', type: 'textarea', required: true },
+        { id: 'notWantMentioned', label: 'What would the people responsible for this legacy absolutely not want mentioned tonight?', type: 'textarea', required: true },
+        { id: 'oneRidiculousThing', label: 'If this legacy had to be remembered for one completely ridiculous thing, what should it be?', type: 'textarea', required: true }
+      ]
     }
   };
   
@@ -831,7 +1016,7 @@
     'quinceañera': 'big-birthday-30th-50th-etc-',
     'housewarming-grand-opening': 'big-birthday-30th-50th-etc-',
     'eulogy': 'eulogy',
-    'celebration-of-life': 'eulogy',  // Same as eulogy
+    'celebration-of-life': 'celebration-of-life',  // Own dedicated questions
     'charity-gala-fundraiser': 'charity-gala-fundraiser',  // Has its own questions now!
     'wedding-guest-toast': 'wedding-guest-toast',  // Has its own 6 questions per tone!
     'anniversary-party': 'anniversary-party',  // Has its own 6 questions per tone!
@@ -840,9 +1025,9 @@
     'baby-shower': 'baby-shower',  // Own dedicated questions
     'retirement-party': 'retirement-party',  // Own dedicated questions
     'achievement-celebration': 'achievement-celebration',  // Own dedicated questions
-    'tribute-to-mentor': 'retirement-farewell',  // Professional tribute
-    'thank-you-speech': 'retirement-farewell',  // Gratitude speech
-    'legacy-event': 'retirement-farewell'  // Honor/tribute
+    'tribute-to-mentor': 'tribute-to-mentor',  // Own dedicated questions
+    'thank-you-speech': 'thank-you-speech',  // Own dedicated questions
+    'legacy-event': 'legacy-event'  // Own dedicated questions
   };
   
   // ===========================

@@ -679,6 +679,11 @@ body {
   color: #065f46;
 }
 
+.status-edited {
+  background: var(--brand-light-purple);
+  color: var(--brand-purple);
+}
+
 .order-details p {
   font-size: 0.875rem;
   color: var(--text-medium);

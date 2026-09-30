@@ -26,7 +26,6 @@
   var dashboardModal = document.getElementById('dashboardModal');
   var dashboardClose = document.getElementById('dashboardClose');
   var authModal = document.getElementById('authModal');
-  var continueAsGuestBtn = document.getElementById('continueAsGuest');
   var createAccountBtn = document.getElementById('createAccount');
   var loginLink = document.getElementById('loginLink');
   var modalClose = document.querySelector('.modal-close');
@@ -88,16 +87,6 @@
     createAccountBtn.addEventListener('click', function() {
       authModal.style.display = 'none';
       netlifyIdentity.open('signup');
-    });
-  }
-  
-  if (continueAsGuestBtn) {
-    continueAsGuestBtn.addEventListener('click', function() {
-      authModal.style.display = 'none';
-      if (pendingOrderData) {
-        submitOrderAsGuest(pendingOrderData);
-        pendingOrderData = null;
-      }
     });
   }
   
@@ -243,14 +232,6 @@
     orderData.accountType = 'registered';
     
     // Submit to Netlify Forms with user data
-    submitOrder(orderData);
-  }
-  
-  function submitOrderAsGuest(orderData) {
-    // Mark as guest order
-    orderData.accountType = 'guest';
-    
-    // Submit to Netlify Forms
     submitOrder(orderData);
   }
   
@@ -464,8 +445,13 @@
       speechesInProgress.innerHTML = progressHTML;
     }
     
-    // Display completed speeches
+    // Display completed speeches (most recently edited/completed first)
     var completed = speeches.filter(function(s) { return s.status === 'completed'; });
+    completed.sort(function(a, b) {
+      var aTime = new Date(a.updatedAt || a.completedAt || a.createdAt);
+      var bTime = new Date(b.updatedAt || b.completedAt || b.createdAt);
+      return bTime - aTime;
+    });
     if (completed.length === 0) {
       completedSpeeches.innerHTML = '<p class="no-data">No completed speeches yet.</p>';
     } else {
@@ -473,13 +459,16 @@
       completed.forEach(function(speech) {
         var date = new Date(speech.completedAt || speech.createdAt).toLocaleDateString();
         var occasionType = speech.occasionType || speech.occasion || 'Custom Speech';
+        var editBadge = speech.editCount ? '<span class="order-status status-edited">✏️ Edit ' + speech.editCount + '</span>' : '';
+        var editedNote = speech.updatedAt ? '<p style="font-size: 0.8rem; color: #7c3aed;">Last edited: ' + new Date(speech.updatedAt).toLocaleString() + '</p>' : '';
         completedHTML += '<div class="order-item">';
         completedHTML += '  <div class="order-header">';
         completedHTML += '    <span class="order-date">' + date + '</span>';
+        completedHTML += '    ' + editBadge;
         completedHTML += '    <span class="order-status status-completed">✓ Completed</span>';
         completedHTML += '  </div>';
         completedHTML += '  <div class="order-details">';
-        completedHTML += '    <p><strong>Occasion:</strong> ' + occasionType + '</p>';
+        completedHTML += '    <p><strong>Occasion:</strong> ' + occasionType + '</p>' + editedNote;
         completedHTML += '    <p><button class="view-speech-btn" data-speech-id="' + speech.id + '">👁️ View Speech</button></p>';
         completedHTML += '  </div>';
         completedHTML += '</div>';
@@ -865,6 +854,11 @@
           setTimeout(function() {
             modal.style.display = 'none';
           }, 4000);
+          
+          // Refresh dashboard so the edited speech shows its Edit badge
+          if (currentUser) {
+            loadUserDashboard(currentUser);
+          }
           
           submitBtn.disabled = newRemaining <= 0;
           submitBtn.textContent = 'Submit Edit Request';

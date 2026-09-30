@@ -324,6 +324,192 @@
       ]
     },
     
+    // Corporate - Promotion/Welcome
+    'promotion-welcome': {
+      base: [],
+      showAllToneQuestions: true,
+      serious: [
+        { id: 'occasionRole', label: 'What is the occasion, who is being welcomed or promoted, and what is their new role?', type: 'textarea', required: true },
+        { id: 'suitedQualities', label: 'What experience, qualities or achievements make them well suited to this position?', type: 'textarea', required: true },
+        { id: 'contributionImpact', label: 'What have they contributed so far, and what impact have they had on the team or organisation?', type: 'textarea', required: true },
+        { id: 'bringToRole', label: 'What do you think they will bring to their new role?', type: 'textarea', required: true },
+        { id: 'opportunitiesChallenges', label: 'What opportunities or challenges lie ahead for them?', type: 'textarea', required: true },
+        { id: 'bestWishes', label: 'What message or best wishes would you like to offer as they begin this next chapter?', type: 'textarea', required: true }
+      ],
+      humorous: [
+        { id: 'howEndedUpHere', label: 'Who is being welcomed or promoted, what is their new role, and how did they end up here?', type: 'textarea', required: true },
+        { id: 'firstImpression', label: 'What was your first impression of them, and has it changed since?', type: 'textarea', required: true },
+        { id: 'funnyIncident', label: 'What funny incident, workplace mishap or memorable moment involving them deserves a mention?', type: 'textarea', required: true },
+        { id: 'habitQuirk', label: 'What habit, quirk or personality trait will their new colleagues quickly discover?', type: 'textarea', required: true },
+        { id: 'surprisingChallenging', label: 'What do you think they will find most surprising, confusing or challenging about their new position?', type: 'textarea', required: true },
+        { id: 'amusingAdvice', label: 'What amusing piece of advice would you give them as they settle into their new role?', type: 'textarea', required: true }
+      ],
+      emotional: [
+        { id: 'occasionMeaning', label: 'Who is being welcomed or promoted, what is their new role, and what does this occasion mean to you?', type: 'textarea', required: true },
+        { id: 'deservingQualities', label: 'What qualities or experiences have made them particularly deserving of this opportunity?', type: 'textarea', required: true },
+        { id: 'sawPotential', label: 'Is there a moment when you saw their potential or realised how much they had to offer?', type: 'textarea', required: true },
+        { id: 'differenceToPeople', label: 'How have they made a difference to the people they have worked with?', type: 'textarea', required: true },
+        { id: 'hopeNewChapter', label: 'What do you hope this new chapter will bring them?', type: 'textarea', required: true },
+        { id: 'likeThemToKnow', label: 'What would you most like them to know as they take this next step?', type: 'textarea', required: true }
+      ],
+      banter: [
+        { id: 'whosResponsible', label: 'Who is being welcomed or promoted, what is their new role, and who thought giving them that responsibility was a good idea?', type: 'textarea', required: true },
+        { id: 'questionableThing', label: 'What is the funniest or most questionable thing they have done during their time here?', type: 'textarea', required: true },
+        { id: 'flawToLiveWith', label: 'What habit or personality flaw will their new colleagues have to learn to live with?', type: 'textarea', required: true },
+        { id: 'getSpectacularlyWrong', label: 'What are they most likely to get spectacularly wrong in their new role?', type: 'textarea', required: true },
+        { id: 'notInHandover', label: 'What should their new colleagues know about them that probably wasn\'t included in the handover?', type: 'textarea', required: true },
+        { id: 'brutalAdvice', label: 'What brutally honest piece of advice would you give them before they get too comfortable?', type: 'textarea', required: true }
+      ]
+    },
+
+    // Corporate - Keynote/Panel
+    'keynote-panel': {
+      base: [],
+      showAllToneQuestions: true,
+      serious: [
+        { id: 'eventAndSubject', label: 'What is the event about, what is your role, and what subject will you be speaking about?', type: 'textarea', required: true },
+        { id: 'takeaways', label: 'What are the main ideas, experiences or messages you want the audience to take away?', type: 'textarea', required: true },
+        { id: 'whyImportant', label: 'Why is this subject important or relevant to the audience?', type: 'textarea', required: true },
+        { id: 'bestExample', label: 'What experience, evidence or example best illustrates the point you want to make?', type: 'textarea', required: true },
+        { id: 'challengesPerspectives', label: 'What challenges, questions or differing perspectives are important to address?', type: 'textarea', required: true },
+        { id: 'audienceAction', label: 'What would you like the audience to think about or do after hearing you speak?', type: 'textarea', required: true }
+      ],
+      humorous: [
+        { id: 'expectedToTalk', label: 'What is the event about, what is your role, and what are you expected to talk about?', type: 'textarea', required: true },
+        { id: 'amusingExperience', label: 'What is the most amusing, unexpected or ridiculous experience you\'ve had relating to the subject?', type: 'textarea', required: true },
+        { id: 'gentleRoasting', label: 'What common misconception, industry habit or professional buzzword deserves a gentle roasting?', type: 'textarea', required: true },
+        { id: 'goneWrong', label: 'What has gone wrong in your experience that might help make your point?', type: 'textarea', required: true },
+        { id: 'tooSerious', label: 'What aspect of the subject do people take far too seriously, or not seriously enough?', type: 'textarea', required: true },
+        { id: 'oneThingRemembered', label: 'If the audience remembers just one thing from your talk, what would you like it to be?', type: 'textarea', required: true }
+      ],
+      emotional: [
+        { id: 'whyMattersPersonally', label: 'What is the event about, what is your role, and why does this subject matter to you personally?', type: 'textarea', required: true },
+        { id: 'turningPoint', label: 'What experience or turning point first made you passionate about this topic?', type: 'textarea', required: true },
+        { id: 'shapedPerspective', label: 'What challenge, setback or achievement has shaped your perspective?', type: 'textarea', required: true },
+        { id: 'influentialPerson', label: 'Is there a particular person or experience that has influenced the message you want to share?', type: 'textarea', required: true },
+        { id: 'hopeAudienceFeel', label: 'What do you hope your words will help the audience understand, feel or reconsider?', type: 'textarea', required: true },
+        { id: 'oneMessage', label: 'If the audience remembers one message from your contribution, what would you want it to be?', type: 'textarea', required: true }
+      ],
+      banter: [
+        { id: 'foolishlyTrusted', label: 'What is the event about, what is your role, and what have they foolishly trusted you to talk about?', type: 'textarea', required: true },
+        { id: 'ridiculousWitnessed', label: 'What is the most ridiculous thing you have witnessed in your industry or area of expertise?', type: 'textarea', required: true },
+        { id: 'jargonCliche', label: 'What professional habit, industry cliché or piece of jargon makes you want to leave the room?', type: 'textarea', required: true },
+        { id: 'spectacularFailure', label: 'What disaster, mistake or spectacular failure have you experienced that the audience deserves to hear about?', type: 'textarea', required: true },
+        { id: 'uncomfortableTruth', label: 'What uncomfortable truth about your subject could you say out loud that everyone in the room already knows?', type: 'textarea', required: true },
+        { id: 'brutallyHonestMessage', label: 'If you had to leave the audience with one brutally honest message, what would it be?', type: 'textarea', required: true }
+      ]
+    },
+
+    // Corporate - Award Acceptance
+    'award-acceptance': {
+      base: [],
+      showAllToneQuestions: true,
+      serious: [
+        { id: 'awardDetails', label: 'What award are you receiving, who is presenting it, and what is it recognising?', type: 'textarea', required: true },
+        { id: 'awardMeaning', label: 'What does receiving this award mean to you, and why is it significant?', type: 'textarea', required: true },
+        { id: 'journeyLed', label: 'What work, achievement or journey has led to this moment?', type: 'textarea', required: true },
+        { id: 'supportersThanks', label: 'Who has supported, encouraged or contributed to your success, and what would you like to thank them for?', type: 'textarea', required: true },
+        { id: 'challengesLessons', label: 'What challenges or important lessons have shaped the work being recognised?', type: 'textarea', required: true },
+        { id: 'messageAndNext', label: 'What would you like to say to the people who made this recognition possible, and what comes next?', type: 'textarea', required: true }
+      ],
+      humorous: [
+        { id: 'howSurprised', label: 'What award are you receiving, what is it for, and how surprised are you to be standing here?', type: 'textarea', required: true },
+        { id: 'funniestThingOnWay', label: 'What is the funniest or most unexpected thing that happened on the way to winning it?', type: 'textarea', required: true },
+        { id: 'creditUnbearable', label: 'Who deserves some of the credit, and who would be absolutely unbearable if you thanked them?', type: 'textarea', required: true },
+        { id: 'questionableContribution', label: 'What mistake, mishap or questionable decision somehow contributed to this moment?', type: 'textarea', required: true },
+        { id: 'peopleWhoKnowYou', label: 'What would the people who know you best say about you winning this award?', type: 'textarea', required: true },
+        { id: 'laughWithoutRevoke', label: 'What is the one thing you can say in your acceptance speech that will make people laugh without getting the award taken back?', type: 'textarea', required: true }
+      ],
+      emotional: [
+        { id: 'momentMeaning', label: 'What award are you receiving, what does it recognise, and what does this moment mean to you?', type: 'textarea', required: true },
+        { id: 'personalJourney', label: 'What personal journey, sacrifice or determination lies behind this achievement?', type: 'textarea', required: true },
+        { id: 'doubtedSelf', label: 'Was there a point when you doubted yourself or wondered whether you would get here?', type: 'textarea', required: true },
+        { id: 'lastingDifference', label: 'Who has made a lasting difference to your journey, and what would you like them to know?', type: 'textarea', required: true },
+        { id: 'beyondAward', label: 'What does this recognition mean beyond the award itself?', type: 'textarea', required: true },
+        { id: 'heartfeltMessage', label: 'If you could share one heartfelt message with the people who supported you, what would you say?', type: 'textarea', required: true }
+      ],
+      banter: [
+        { id: 'publicAttention', label: 'What award are you receiving, what is it for, and what have you done to deserve this level of public attention?', type: 'textarea', required: true },
+        { id: 'obligedToThank', label: 'Who are you obliged to thank, and who are you deliberately leaving out?', type: 'textarea', required: true },
+        { id: 'ridiculousPursuit', label: 'What is the most ridiculous thing you did in pursuit of this award?', type: 'textarea', required: true },
+        { id: 'colleaguesHonest', label: 'What would your colleagues say if they were being completely honest about you winning?', type: 'textarea', required: true },
+        { id: 'leastGlamorous', label: 'What is the most embarrassing or least glamorous truth behind this achievement?', type: 'textarea', required: true },
+        { id: 'brutallyHonestSpeech', label: 'If you had to give an acceptance speech that was brutally honest rather than diplomatic, what would you say?', type: 'textarea', required: true }
+      ]
+    },
+
+    // Corporate - Award Presentation
+    'award-presentation': {
+      base: [],
+      showAllToneQuestions: true,
+      serious: [
+        { id: 'presentingDetails', label: 'What award are you presenting, who is receiving it, and what does it recognise?', type: 'textarea', required: true },
+        { id: 'recipientAchieved', label: 'What has the recipient achieved or contributed that makes this recognition meaningful?', type: 'textarea', required: true },
+        { id: 'distinguishedQualities', label: 'What qualities, skills or values have distinguished their work?', type: 'textarea', required: true },
+        { id: 'demonstratingMoment', label: 'Is there a particular achievement, example or moment that demonstrates their impact?', type: 'textarea', required: true },
+        { id: 'benefitedWhom', label: 'How has their contribution benefited colleagues, customers, the organisation or the wider community?', type: 'textarea', required: true },
+        { id: 'acknowledgeFirst', label: 'What would you most like to acknowledge about the recipient before presenting the award?', type: 'textarea', required: true }
+      ],
+      humorous: [
+        { id: 'earnIt', label: 'What award are you presenting, who is receiving it, and what have they done to earn it?', type: 'textarea', required: true },
+        { id: 'funnyStoryRecipient', label: 'What funny, unusual or memorable story about the recipient deserves to be shared?', type: 'textarea', required: true },
+        { id: 'recognisedTrait', label: 'What habit, quirk or personality trait will everyone in the room recognise?', type: 'textarea', required: true },
+        { id: 'unexpectedEntertaining', label: 'What is the most unexpected or entertaining thing about their work or achievements?', type: 'textarea', required: true },
+        { id: 'realReason', label: 'What would their colleagues say is the real reason they deserve this award?', type: 'textarea', required: true },
+        { id: 'lightheartedComment', label: 'What light-hearted comment could you make about the recipient before revealing their name?', type: 'textarea', required: true }
+      ],
+      emotional: [
+        { id: 'recognitionImportant', label: 'What award are you presenting, who is receiving it, and why is this recognition important?', type: 'textarea', required: true },
+        { id: 'achievedOvercome', label: 'What has the recipient achieved or overcome to reach this moment?', type: 'textarea', required: true },
+        { id: 'greatestImpression', label: 'What personal qualities have made the greatest impression on you?', type: 'textarea', required: true },
+        { id: 'sawDifference', label: 'Is there a particular moment when you saw the difference they were making?', type: 'textarea', required: true },
+        { id: 'influencedOthers', label: 'How have they influenced, supported or inspired the people around them?', type: 'textarea', required: true },
+        { id: 'valueOfContribution', label: 'What would you most like the recipient to understand about the value of their contribution?', type: 'textarea', required: true }
+      ],
+      banter: [
+        { id: 'supposedlyDeserve', label: 'What award are you presenting, who is receiving it, and what have they supposedly done to deserve it?', type: 'textarea', required: true },
+        { id: 'outrageousStory', label: 'What is the funniest or most outrageous story involving the recipient that is safe to tell in public?', type: 'textarea', required: true },
+        { id: 'instantlyRecognisable', label: 'What habit or personality trait makes them instantly recognisable to everyone here?', type: 'textarea', required: true },
+        { id: 'ridiculousDetail', label: 'What achievement are they being recognised for, and what is the most ridiculous detail behind it?', type: 'textarea', required: true },
+        { id: 'lessAdmirableAward', label: 'What would their colleagues nominate them for if there were an award for their less admirable qualities?', type: 'textarea', required: true },
+        { id: 'entertainingAdmission', label: 'What is the most entertaining thing you can say about them before finally admitting they deserve the award?', type: 'textarea', required: true }
+      ]
+    },
+
+    // Corporate - Company Anniversary
+    'company-anniversary': {
+      base: [],
+      showAllToneQuestions: true,
+      serious: [
+        { id: 'timeAndRole', label: 'How long have you been with the company, and what has your role or position been during that time?', type: 'textarea', required: true },
+        { id: 'firstJoined', label: 'What do you remember most clearly about the company when you first joined, and what has changed since then?', type: 'textarea', required: true },
+        { id: 'milestoneStandsOut', label: 'What achievement, milestone or period of growth stands out most to you during your time with the business?', type: 'textarea', required: true },
+        { id: 'significantContribution', label: 'What people, teams or individuals have made a particularly significant contribution to the company\'s journey?', type: 'textarea', required: true },
+        { id: 'recogniseCelebrate', label: 'What do you think is most important to recognise or celebrate about the company at this anniversary?', type: 'textarea', required: true }
+      ],
+      humorous: [
+        { id: 'jobThenNow', label: 'How long have you worked here, what was your job when you started, and how different is your role now?', type: 'textarea', required: true },
+        { id: 'biggestChange', label: 'What is the biggest change you\'ve witnessed since joining — apart from the number of meetings?', type: 'textarea', required: true },
+        { id: 'talkedAboutIncident', label: 'What memorable mistake, mishap, office tradition or bizarre incident from your time here still gets talked about?', type: 'textarea', required: true },
+        { id: 'mostEntertainment', label: 'Who or what has provided the most entertainment during your time at the company?', type: 'textarea', required: true },
+        { id: 'ridiculousAnalogy', label: 'If you could describe the company\'s journey so far using one ridiculous analogy, what would it be?', type: 'textarea', required: true }
+      ],
+      emotional: [
+        { id: 'journeyMeaning', label: 'How long have you been part of the company, and what has your journey through the business meant to you personally?', type: 'textarea', required: true },
+        { id: 'proudMoment', label: 'What moment during your time here made you feel particularly proud to be part of the company?', type: 'textarea', required: true },
+        { id: 'greatestImpact', label: 'Which colleagues, mentors or teams have had the greatest impact on you during your time here?', type: 'textarea', required: true },
+        { id: 'broughtTogether', label: 'Is there a particular challenge, achievement or period of change that brought the people in the company together?', type: 'textarea', required: true },
+        { id: 'mostGrateful', label: 'When you look back at the company\'s journey, what are you most grateful to have been part of?', type: 'textarea', required: true }
+      ],
+      banter: [
+        { id: 'stillUnderstand', label: 'How long have you been here, what did you actually do when you started, and how much of that job do you still understand?', type: 'textarea', required: true },
+        { id: 'mostRidiculous', label: 'What is the most ridiculous thing that has happened at the company during your time here?', type: 'textarea', required: true },
+        { id: 'sourceOfChaos', label: 'Which colleague, department or company habit deserves the dubious honour of being the biggest source of workplace chaos?', type: 'textarea', required: true },
+        { id: 'whatWereTheySmoking', label: 'What company decision, policy or change from the past makes you wonder what the people in charge were smoking?', type: 'textarea', required: true },
+        { id: 'honestReviewHeadline', label: 'If you had to give the company a brutally honest review after all these years, what would the headline be?', type: 'textarea', required: true }
+      ]
+    },
+
     // Milestone - Big Birthday
     'big-birthday-30th-50th-etc-': {
       base: [
@@ -404,12 +590,12 @@
     'bridesmaid-groomsman': 'maid-matron-of-honour',  // Similar to maid of honour
     'vow-renewal': 'groom',  // Similar to bride/groom
     'retirement-farewell': 'retirement-farewell',
-    'promotion-welcome': 'retirement-farewell',  // Similar structure
-    'keynote-panel': 'retirement-farewell',
+    'promotion-welcome': 'promotion-welcome',  // Own dedicated questions
+    'keynote-panel': 'keynote-panel',  // Own dedicated questions
     'town-hall': 'retirement-farewell',
     'product-launch-pitch': 'retirement-farewell',
-    'award-acceptance': 'retirement-farewell',
-    'award-presentation': 'retirement-farewell',
+    'award-acceptance': 'award-acceptance',  // Own dedicated questions
+    'award-presentation': 'award-presentation',  // Own dedicated questions
     'big-birthday-30th-50th-etc-': 'big-birthday-30th-50th-etc-',
     'anniversary': 'big-birthday-30th-50th-etc-',
     'graduation': 'big-birthday-30th-50th-etc-',
@@ -421,7 +607,7 @@
     'charity-gala-fundraiser': 'charity-gala-fundraiser',  // Has its own questions now!
     'wedding-guest-toast': 'wedding-guest-toast',  // Has its own 6 questions per tone!
     'anniversary-party': 'anniversary-party',  // Has its own 6 questions per tone!
-    'company-anniversary': 'retirement-farewell',  // Corporate celebration
+    'company-anniversary': 'company-anniversary',  // Own dedicated questions
     'engagement-party': 'groom',  // Pre-wedding celebration
     'baby-shower': 'big-birthday-30th-50th-etc-',  // Milestone celebration
     'retirement-party': 'retirement-farewell',  // Already exists
@@ -512,9 +698,9 @@
     
     // Add tone-specific questions if tone is selected
     if (tone && questionSet[tone]) {
-      // Randomly select 2-3 questions from the tone-specific set to keep it manageable
+      // Show all questions for sets flagged showAllToneQuestions; otherwise first 3 to keep it manageable
       var toneQuestions = questionSet[tone];
-      var numToShow = Math.min(3, toneQuestions.length);
+      var numToShow = questionSet.showAllToneQuestions ? toneQuestions.length : Math.min(3, toneQuestions.length);
       var selectedToneQuestions = toneQuestions.slice(0, numToShow);
       questionsToShow = questionsToShow.concat(selectedToneQuestions);
     }
@@ -563,6 +749,7 @@
       
       input.id = question.id;
       input.name = question.id;
+      input.setAttribute('data-question-label', question.label);
       if (question.required) {
         input.required = true;
       }
@@ -632,7 +819,9 @@
       if (name && !['customerName', 'customerEmail', 'subjectNames', 'package', 'tone', 'category', 'specificOccasion'].includes(name)) {
         var value = input.value;
         if (value) {
-          data.questionnaire[name] = value;
+          // Use the full question text as the key so the AI sees exactly what was asked
+          var questionKey = input.getAttribute('data-question-label') || name;
+          data.questionnaire[questionKey] = value;
         }
       }
     });
@@ -761,28 +950,50 @@
       e.preventDefault();
       
       var formData = new FormData(contactForm);
+      var submitBtn = contactForm.querySelector('button[type="submit"]');
+      var user = window.netlifyIdentity ? netlifyIdentity.currentUser() : null;
+      
       var data = {
-        'form-name': 'superspeech-contact',
-        'contact-name': formData.get('contactName'),
-        'contact-email': formData.get('contactEmail'),
-        'contact-subject': formData.get('contactSubject'),
-        'contact-message': formData.get('contactMessage')
+        name: formData.get('contactName'),
+        email: formData.get('contactEmail'),
+        subject: formData.get('contactSubject'),
+        message: formData.get('contactMessage'),
+        userId: user ? user.id : null
       };
       
-      // Submit to Netlify
-      fetch('/', {
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Sending...';
+      }
+      
+      // Submit to backend AI mailer - generates a reply, emails the
+      // customer + business copy, and logs it to dashboard Messages
+      fetch('https://superspeech-backend.onrender.com/api/webhooks/contact-form', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: new URLSearchParams(data).toString()
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
       })
-      .then(function() {
-        contactForm.style.display = 'none';
-        contactSuccess.style.display = 'block';
-        console.log('Contact form submitted successfully');
+      .then(function(response) {
+        return response.json().catch(function() { return {}; }).then(function(d) {
+          return { ok: response.ok, data: d };
+        });
+      })
+      .then(function(result) {
+        if (result.ok && result.data.success !== false) {
+          contactForm.style.display = 'none';
+          contactSuccess.style.display = 'block';
+          console.log('Contact form submitted to AI mailer');
+        } else {
+          throw new Error((result.data && result.data.error) || 'Send failed');
+        }
       })
       .catch(function(error) {
         console.error('Error submitting contact form:', error);
-        alert('Error sending message. Please email us directly at hello@superspeech.biz');
+        alert('Error sending message. Please try again in a moment.');
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.textContent = 'Send Message';
+        }
       });
     });
   }

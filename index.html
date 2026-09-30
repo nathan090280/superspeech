@@ -346,7 +346,7 @@
             
             <div id="contactSuccess" style="display:none;" class="success-box">
               <h3>✓ Message Sent!</h3>
-              <p>Thank you for contacting us. We'll get back to you within 24 hours.</p>
+              <p>Thank you for contacting us. Our AI assistant has sent a reply to your email — check your inbox (and spam folder just in case). If you're logged in, it will also appear in your Dashboard Messages.</p>
             </div>
           </div>
         </div>
@@ -413,7 +413,6 @@
             <h3>🆘 Support & Help</h3>
             <div class="support-links">
               <p><a href="#contact" class="support-link">📧 Contact Support</a></p>
-              <p><a href="mailto:hello@superspeech.biz" class="support-link">💌 Email Us Directly</a></p>
               <p><a href="#order" class="support-link">➕ New Order</a></p>
               <p style="font-size: 0.875rem; color: #666; margin-top: 1rem;">Response time: typically within 24 hours</p>
             </div>
@@ -427,11 +426,10 @@
   <div id="authModal" class="modal" style="display:none;">
     <div class="modal-content">
       <span class="modal-close">&times;</span>
-      <h2>Continue as Guest or Create Account?</h2>
-      <p>Creating an account lets you track your orders and access your speeches anytime!</p>
+      <h2>Create a Free Account to Continue</h2>
+      <p>It takes 30 seconds and lets you track your orders, request edits, and access your speeches anytime.</p>
       
       <div class="auth-options">
-        <button id="continueAsGuest" class="btn btn-outline">Continue as Guest</button>
         <button id="createAccount" class="btn btn-primary">Create Account</button>
       </div>
       
@@ -483,13 +481,7 @@
     <textarea name="full-data"></textarea>
   </form>
   
-  <form name="superspeech-contact" netlify netlify-honeypot="bot-field" hidden>
-    <input type="text" name="contact-name" />
-    <input type="email" name="contact-email" />
-    <input type="text" name="contact-subject" />
-    <textarea name="contact-message"></textarea>
-  </form>
-  
+
   <!-- Netlify Identity Widget -->
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   

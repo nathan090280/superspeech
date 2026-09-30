@@ -210,12 +210,19 @@
             <h3>Your Information</h3>
             <div class="form-row">
               <div class="form-group">
-                <label for="customerName">Your Name *</label>
-                <input type="text" id="customerName" name="customerName" required>
+                <label for="customerName">Your Name (Speaker) *</label>
+                <input type="text" id="customerName" name="customerName" required placeholder="Who is giving this speech?">
               </div>
               <div class="form-group">
                 <label for="customerEmail">Email Address *</label>
                 <input type="email" id="customerEmail" name="customerEmail" required>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="subjectNames">Subject of Speech (Who/What is this speech about?) *</label>
+                <input type="text" id="subjectNames" name="subjectNames" required placeholder="e.g., John & Sarah, retiring colleague's name, graduate's name">
+                <small style="color:#666; font-size:0.85rem;">For weddings: couple's names. For tributes: honoree's name.</small>
               </div>
             </div>
           </div>
@@ -282,6 +289,13 @@
           </div>
         </form>
         
+        <!-- Submitting Message -->
+        <div id="submittingMessage" style="display:none;" class="submitting-box">
+          <h3>⏳ Processing Your Order...</h3>
+          <p>Please wait while we submit your order.</p>
+          <p style="font-size: 0.875rem; color: #666;">This should only take a few seconds.</p>
+        </div>
+        
         <!-- Success Message -->
         <div id="successMessage" style="display:none;" class="success-box">
           <h3>✓ Order Received!</h3>
@@ -339,9 +353,14 @@
       </div>
     </section>
     
-    <!-- Dashboard Section (Only visible when logged in) -->
-    <section id="dashboard" class="dashboard-section" style="display:none;">
-      <div class="container">
+  </main>
+  
+  <!-- Dashboard Modal (Only visible when logged in) -->
+  <div id="dashboardModal" class="dashboard-modal" style="display:none;">
+    <div class="dashboard-modal-content">
+      <span class="dashboard-close" id="dashboardClose">&times;</span>
+      
+      <section id="dashboard" class="dashboard-section">
         <h2 class="section-title">My Dashboard</h2>
         <p class="welcome-message">Welcome back, <span id="dashboardUserName"></span>!</p>
         
@@ -400,9 +419,9 @@
             </div>
           </div>
         </div>
-      </div>
-    </section>
-  </main>
+      </section>
+    </div>
+  </div>
   
   <!-- Login/Signup Modal -->
   <div id="authModal" class="modal" style="display:none;">
@@ -417,6 +436,34 @@
       </div>
       
       <p class="modal-note">Already have an account? <a href="#" id="loginLink">Login here</a></p>
+    </div>
+  </div>
+  
+  <!-- Speech Viewer Modal -->
+  <div id="speechViewerModal" class="modal" style="display:none;">
+    <div class="modal-content speech-viewer">
+      <span class="modal-close" id="speechViewerClose">&times;</span>
+      <h2 id="speechViewerTitle">Your Speech</h2>
+      <div class="speech-actions">
+        <button id="copySpeechBtn" class="action-btn">📋 Copy</button>
+        <button id="printSpeechBtn" class="action-btn">🖨️ Print</button>
+        <button id="downloadSpeechBtn" class="action-btn">⬇️ Download</button>
+        <button id="requestEditBtn" class="action-btn">✏️ Request Edit</button>
+      </div>
+      <div id="speechContent" class="speech-text"></div>
+    </div>
+  </div>
+  
+  <!-- Request Edit Modal -->
+  <div id="editRequestModal" class="modal" style="display:none;">
+    <div class="modal-content">
+      <span class="modal-close" id="editRequestClose">&times;</span>
+      <h2>Request an Edit</h2>
+      <p id="editsRemainingText" class="edits-remaining"></p>
+      <p class="edit-prompt">Please describe any edits you would like to make to this speech to make it absolutely perfect</p>
+      <textarea id="editRequestText" rows="6" placeholder="e.g., Make the opening more heartfelt, add a story about the groom's cooking, mention the bride's late father..."></textarea>
+      <button id="submitEditRequest" class="btn btn-primary edit-submit-btn">Submit Edit Request</button>
+      <p id="editRequestStatus" class="modal-note"></p>
     </div>
   </div>
   
@@ -445,6 +492,9 @@
   
   <!-- Netlify Identity Widget -->
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  
+  <!-- PDF generation for speech downloads -->
+  <script src="js/vendor/jspdf.umd.min.js" defer></script>
   
   <!-- JavaScript (defer for non-blocking load) -->
   <script src="js/app.js" defer></script>

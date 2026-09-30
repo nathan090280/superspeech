@@ -246,15 +246,14 @@ body {
   border-color: var(--brand-blue);
 }
 
-/* Featured card styling */
+/* Featured card styling - no permanent blue border */
 .pricing-card.featured {
-  border: 2px solid var(--brand-blue);
-  border-color: var(--brand-blue);
+  border: 2px solid var(--border-color);
 }
 
+/* Featured card hover - ensure blue border shows */
 .pricing-card.featured:hover {
   border-color: var(--brand-blue);
-  border-width: 2px;
 }
 
 /* Selected state - only when clicked */
@@ -271,12 +270,6 @@ body {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-}
-
-/* Make sure featured doesn't override selected */
-.pricing-card.featured:not(.selected) {
-  border-color: var(--border-color);
-  box-shadow: none;
 }
 
 .badge {
@@ -418,7 +411,7 @@ body {
 }
 
 /* ===========================
-   Success Message
+   Success & Submitting Messages
    =========================== */
 .success-box {
   max-width: 600px;
@@ -437,6 +430,27 @@ body {
 }
 
 .success-box p {
+  color: var(--text-medium);
+  margin-bottom: 0.5rem;
+}
+
+.submitting-box {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: #eff6ff;
+  border: 2px solid #93c5fd;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.submitting-box h3 {
+  color: #2563eb;
+  font-size: 1.75rem;
+  margin-bottom: 1rem;
+}
+
+.submitting-box p {
   color: var(--text-medium);
   margin-bottom: 0.5rem;
 }
@@ -517,12 +531,75 @@ body {
 }
 
 /* ===========================
-   Dashboard Section
+   Dashboard Section (Modal)
    =========================== */
-.dashboard-section {
-  padding: 6rem 0;
+.dashboard-modal {
+  display: none;
+  position: fixed;
+  z-index: 1001;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  overflow-y: auto;
+  padding: 2rem 0;
+}
+
+.dashboard-modal-content {
   background: var(--bg-light);
-  min-height: 80vh;
+  border-radius: 16px;
+  max-width: 1400px;
+  width: 95%;
+  margin: 0 auto;
+  padding: 3rem;
+  position: relative;
+  box-shadow: var(--shadow-xl);
+  animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.dashboard-close {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  font-size: 2.5rem;
+  font-weight: 300;
+  color: var(--text-light);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: white;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  box-shadow: var(--shadow-md);
+  z-index: 10;
+}
+
+.dashboard-close:hover {
+  color: var(--brand-blue);
+  background: var(--bg-light);
+  transform: rotate(90deg);
+}
+
+.dashboard-section {
+  padding: 0;
+  background: transparent;
+  min-height: auto;
 }
 
 .welcome-message {
@@ -784,6 +861,55 @@ body {
   text-decoration: underline;
 }
 
+/* Netlify Identity login popup must sit above the sticky header (z-index: 100) */
+iframe#netlify-identity-widget {
+  z-index: 9999 !important;
+}
+
+/* Speech viewer must render above the dashboard modal (z-index: 1001) */
+#speechViewerModal {
+  z-index: 1002;
+}
+
+/* Edit request modal renders above the speech viewer */
+#editRequestModal {
+  z-index: 1003;
+}
+
+.modal-content .edits-remaining {
+  font-weight: 600;
+  color: var(--brand-purple);
+  margin-bottom: 1rem;
+}
+
+.modal-content .edit-prompt {
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 0.75rem;
+}
+
+#editRequestText {
+  width: 100%;
+  padding: 0.875rem;
+  border: 2px solid var(--border-color);
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: inherit;
+  resize: vertical;
+  margin-bottom: 1.5rem;
+  text-align: left;
+}
+
+#editRequestText:focus {
+  outline: none;
+  border-color: var(--brand-blue);
+}
+
+.edit-submit-btn {
+  width: 100%;
+  margin-bottom: 0.75rem;
+}
+
 /* ===========================
    Responsive Design
    =========================== */
@@ -815,11 +941,30 @@ body {
   
   .site-header .container {
     flex-direction: column;
-    gap: 1rem;
+    gap: 0.5rem;
+  }
+  
+  .logo {
+    height: 38px;
+  }
+  
+  .site-header nav {
+    width: 100%;
+    overflow-x: auto;
   }
   
   .site-header nav ul {
-    gap: 1rem;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    gap: 0.4rem;
+    min-width: min-content;
+  }
+  
+  .site-header nav a {
+    font-size: 0.85rem;
+    padding: 0.4rem 0.15rem;
+    white-space: nowrap;
   }
   
   .contact-content {
@@ -848,6 +993,40 @@ body {
   .modal-content {
     padding: 2rem 1.5rem;
   }
+  
+  /* Dashboard Modal Mobile */
+  .dashboard-modal {
+    padding: 1rem 0;
+  }
+  
+  .dashboard-modal-content {
+    width: 98%;
+    padding: 2rem 1rem;
+    margin: 0 auto;
+  }
+  
+  .dashboard-close {
+    top: 1rem;
+    right: 1rem;
+    width: 36px;
+    height: 36px;
+    font-size: 2rem;
+  }
+}
+
+/* Netlify Identity Widget Mobile Fix */
+@media (max-width: 600px) {
+  /* Ensure Netlify Identity modal is properly sized on mobile */
+  .netlify-identity-widget iframe {
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+  
+  .netlify-identity-modal {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+  }
 }
 
 @media (max-width: 480px) {
@@ -870,4 +1049,71 @@ body {
   .price {
     font-size: 2.5rem;
   }
+  
+  .auth-section .btn {
+    width: auto;
+  }
+}
+
+/* Speech Viewer Modal */
+.speech-viewer {
+  max-width: 800px;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.speech-text {
+  background: #f9f9f9;
+  padding: 2rem;
+  border-radius: 8px;
+  margin-top: 1rem;
+  white-space: pre-wrap;
+  font-family: Georgia, serif;
+  line-height: 1.8;
+  font-size: 1.1rem;
+  color: #333;
+  max-height: 60vh;
+  overflow-y: auto;
+}
+
+.speech-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+  justify-content: center;
+}
+
+.action-btn {
+  background: #667eea;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.action-btn:hover {
+  background: #5568d3;
+  transform: translateY(-2px);
+}
+
+.view-speech-btn {
+  background: #667eea;
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  margin-top: 0.5rem;
+}
+
+.view-speech-btn:hover {
+  background: #5568d3;
+  transform: translateY(-2px);
 }

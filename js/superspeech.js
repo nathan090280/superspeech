@@ -15,10 +15,10 @@
     wedding: {
       name: 'Weddings & Romance',
       types: [
-        'Best Man / Woman / Person',
-        'Maid/Matron of Honour',
-        'Groom',
-        'Bride',
+        'Best Man / Woman / Person\'s Speech',
+        'Maid/Matron of Honour\'s Speech',
+        'Groom\'s Speech',
+        'Bride\'s Speech',
         'Parent of Bride/Groom',
         'Wedding Guest Toast',
         'Vow Renewal',
@@ -61,6 +61,15 @@
     }
   };
   
+  // Occasion display labels that keep their existing URL-friendly values
+  // (so question mappings and stored order data are unchanged)
+  var occasionSlugs = {
+    'Best Man / Woman / Person\'s Speech': 'best-man',
+    'Maid/Matron of Honour\'s Speech': 'maid-matron-of-honour',
+    'Groom\'s Speech': 'groom',
+    'Bride\'s Speech': 'bride'
+  };
+
   // ===========================
   // Dynamic Questions by Occasion Type & Tone
   // ===========================
@@ -1092,7 +1101,7 @@
       // Populate specific occasion options
       occasions[category].types.forEach(function(type) {
         var option = document.createElement('option');
-        option.value = type.toLowerCase().replace(/[^a-z0-9]+/g, '-');
+        option.value = occasionSlugs[type] || type.toLowerCase().replace(/[^a-z0-9]+/g, '-');
         option.textContent = type;
         specificOccasionSelect.appendChild(option);
       });

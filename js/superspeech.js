@@ -14,7 +14,7 @@
     wedding: {
       name: 'Weddings & Romance',
       types: [
-        'Best Man',
+        'Best Man / Woman / Person',
         'Maid/Matron of Honour',
         'Groom',
         'Bride',
@@ -202,24 +202,39 @@
     
     // Parent of Bride/Groom
     'parent-of-bride-groom': {
-      base: [
-        { id: 'relationship', label: 'Are you the mother or father of the bride or groom?', type: 'select', options: ['Mother of Bride', 'Father of Bride', 'Mother of Groom', 'Father of Groom'], required: true },
-        { id: 'childhoodMemory', label: 'Share a cherished childhood memory of your son/daughter', type: 'textarea', required: true }
+      base: [],
+      showAllToneQuestions: true,
+      serious: [
+        { id: 'relationshipToday', label: 'What is your relationship to the bride or groom, and what does it mean to you to be standing here today?', type: 'textarea', required: true },
+        { id: 'proudOverYears', label: 'What have you seen in them over the years that makes you particularly proud?', type: 'textarea', required: true },
+        { id: 'growingUp', label: 'What do you remember about them growing up that gives you a sense of the person they have become?', type: 'textarea', required: true },
+        { id: 'happyForThem', label: 'What have you seen in their relationship with their partner that makes you happy for them?', type: 'textarea', required: true },
+        { id: 'specialMoment', label: 'Is there a particular memory or moment that captures something special about them or their journey?', type: 'textarea', required: true },
+        { id: 'marriedLife', label: 'What would you most like to say to them as they begin married life together?', type: 'textarea', required: true }
       ],
       humorous: [
-        { id: 'embarrassingStory', label: 'What embarrassing childhood story can you finally reveal?', type: 'textarea', required: false }
+        { id: 'beforeSpouse', label: 'What is your relationship to the bride or groom, and what were they like before they became someone\'s spouse?', type: 'textarea', required: true },
+        { id: 'childhoodStory', label: 'What is the funniest or most embarrassing story from their childhood or younger years that can safely be told today?', type: 'textarea', required: true },
+        { id: 'tolerateTrait', label: 'What habit, quirk or personality trait have they had for years that their new spouse has now signed up to tolerate?', type: 'textarea', required: true },
+        { id: 'firstToldPartner', label: 'What did you think when they first told you about their partner?', type: 'textarea', required: true },
+        { id: 'ridiculousWitnessed', label: 'What is the most ridiculous thing you have witnessed during their relationship?', type: 'textarea', required: true },
+        { id: 'parentalAdvice', label: 'What piece of completely unnecessary but well-intentioned parental advice would you like to give them before they begin married life?', type: 'textarea', required: true }
       ],
       emotional: [
-        { id: 'proudestMoment', label: 'What is your proudest moment as their parent?', type: 'textarea', required: false },
-        { id: 'firstMetPartner', label: 'What did you think when you first met their partner?', type: 'textarea', required: false },
-        { id: 'wishesForFuture', label: 'What are your wishes for their future together?', type: 'textarea', required: false }
-      ],
-      serious: [
-        { id: 'valuesShared', label: 'What values did you try to instill in them?', type: 'textarea', required: false },
-        { id: 'adviceForMarriage', label: 'What marriage advice from your own experience would you share?', type: 'textarea', required: false }
+        { id: 'seeingMarried', label: 'What is your relationship to the bride or groom, and what does seeing them get married mean to you personally?', type: 'textarea', required: true },
+        { id: 'treasuredGrowingUp', label: 'What is your most treasured memory of them growing up?', type: 'textarea', required: true },
+        { id: 'personToday', label: 'What moment made you realise they had become the person they are today?', type: 'textarea', required: true },
+        { id: 'reassuredFuture', label: 'What have you seen in their relationship that has made you feel particularly happy or reassured about their future together?', type: 'textarea', required: true },
+        { id: 'proudQualities', label: 'What qualities in them make you most proud as a parent?', type: 'textarea', required: true },
+        { id: 'heartfeltNewChapter', label: 'What heartfelt message would you like to give them as they begin this new chapter of their lives together?', type: 'textarea', required: true }
       ],
       banter: [
-        { id: 'teenageYears', label: 'What were they like during their teenage years?', type: 'textarea', required: false }
+        { id: 'crimesPatience', label: 'What is your relationship to the bride or groom, and what crimes against your patience did they commit while growing up?', type: 'textarea', required: true },
+        { id: 'waitingToTell', label: 'What is the most embarrassing story from their childhood that you\'ve been waiting years for an excuse to tell?', type: 'textarea', required: true },
+        { id: 'inheritedDefect', label: 'What ridiculous habit or personality defect have they had since childhood that their new spouse has now inherited?', type: 'textarea', required: true },
+        { id: 'broughtPartnerHome', label: 'What did you actually think when they first brought their partner home?', type: 'textarea', required: true },
+        { id: 'notReadyEvidence', label: 'What is the funniest evidence you have that your child is absolutely not ready for married life?', type: 'textarea', required: true },
+        { id: 'honestParentalAdvice', label: 'What brutally honest piece of parental advice would you give them before you finally hand them over to someone else\'s family?', type: 'textarea', required: true }
       ]
     },
     
@@ -993,6 +1008,7 @@
   // Map occasion types to question sets (handles variations)
   var occasionMapping = {
     'best-man': 'best-man',
+    'best-man-woman-person': 'best-man',  // Renamed option, same question set
     'best-woman': 'best-man',  // Same questions as best man
     'best-person': 'best-man',
     'maid-matron-of-honour': 'maid-matron-of-honour',

@@ -510,6 +510,234 @@
       ]
     },
 
+    // Milestone - Graduation
+    'graduation': {
+      base: [],
+      showAllToneQuestions: true,
+      serious: [
+        { id: 'whatGraduating', label: 'What are you graduating from, what qualification or achievement are you celebrating, and what does this milestone mean to you?', type: 'textarea', required: true },
+        { id: 'motivation', label: 'What motivated you to pursue this course, qualification or area of study?', type: 'textarea', required: true },
+        { id: 'biggestChallenges', label: 'What were the biggest challenges or obstacles you faced along the way?', type: 'textarea', required: true },
+        { id: 'whoSupported', label: 'Who supported or encouraged you during your studies, and what did their support mean to you?', type: 'textarea', required: true },
+        { id: 'learnedBeyond', label: 'What have you learned or gained from the experience beyond the qualification itself?', type: 'textarea', required: true },
+        { id: 'hopingNext', label: 'What are you hoping to do next, and what would you like to say to the people celebrating with you?', type: 'textarea', required: true }
+      ],
+      humorous: [
+        { id: 'howSurprised', label: 'What are you graduating from, what qualification have you somehow managed to obtain, and how surprised are you to be here?', type: 'textarea', required: true },
+        { id: 'funniestStudies', label: 'What was the funniest, strangest or most ridiculous thing that happened during your studies?', type: 'textarea', required: true },
+        { id: 'studentDisaster', label: 'What mistake, disaster or questionable decision from your student days deserves to be remembered?', type: 'textarea', required: true },
+        { id: 'whoHelped', label: 'Who helped you get through it, and what did they have to put up with from you?', type: 'textarea', required: true },
+        { id: 'habitNotTaking', label: 'What student habit are you definitely not taking into your next chapter?', type: 'textarea', required: true },
+        { id: 'adviceToSelf', label: 'What is the most entertaining piece of advice you\'d give yourself now that you\'ve actually graduated?', type: 'textarea', required: true }
+      ],
+      emotional: [
+        { id: 'milestoneMeaning', label: 'What are you graduating from, and what does reaching this milestone mean to you personally?', type: 'textarea', required: true },
+        { id: 'sacrificeBehind', label: 'What journey, sacrifice or determination lies behind reaching this point?', type: 'textarea', required: true },
+        { id: 'doubtedKeptGoing', label: 'Was there a moment when you struggled or doubted yourself but kept going?', type: 'textarea', required: true },
+        { id: 'supportedMost', label: 'Who has supported you most along the way, and what would you like them to know?', type: 'textarea', required: true },
+        { id: 'howChanged', label: 'How has this experience changed you or helped you grow?', type: 'textarea', required: true },
+        { id: 'sayToHelpers', label: 'What would you like to say to the people who have helped you reach this moment?', type: 'textarea', required: true }
+      ],
+      banter: [
+        { id: 'howMadeIt', label: 'What are you graduating from, and how the hell did you actually make it this far?', type: 'textarea', required: true },
+        { id: 'mostRidiculous', label: 'What is the most ridiculous thing that happened during your time studying?', type: 'textarea', required: true },
+        { id: 'poorJudgement', label: 'What spectacular mistake, disaster or act of poor judgement deserves to be dragged up tonight?', type: 'textarea', required: true },
+        { id: 'crimesAgainst', label: 'Who had to put up with you while you were studying, and what crimes against their patience did you commit?', type: 'textarea', required: true },
+        { id: 'secretlyEnjoyed', label: 'What part of student life are you absolutely not going to admit you enjoyed?', type: 'textarea', required: true },
+        { id: 'inappropriatePlan', label: 'Now that you\'ve somehow obtained a qualification, what completely inappropriate thing are you planning to do with it?', type: 'textarea', required: true }
+      ]
+    },
+
+    // Milestone - Bar/Bat Mitzvah
+    'bar-bat-mitzvah': {
+      base: [],
+      showAllToneQuestions: true,
+      serious: [
+        { id: 'whatCelebrated', label: 'What is being celebrated today, and what does becoming a Bar or Bat Mitzvah mean to you and your family?', type: 'textarea', required: true },
+        { id: 'faithMeaningful', label: 'What aspects of your Jewish faith, traditions or community are particularly meaningful to you?', type: 'textarea', required: true },
+        { id: 'learnedPreparing', label: 'What have you learned or experienced during your preparation for this milestone?', type: 'textarea', required: true },
+        { id: 'whoGuided', label: 'Who has supported, taught or guided you along the way?', type: 'textarea', required: true },
+        { id: 'mostProud', label: 'What are you most proud of about reaching this stage in your life?', type: 'textarea', required: true },
+        { id: 'hopesBecome', label: 'What hopes or intentions do you have for the person you want to become from this point onwards?', type: 'textarea', required: true }
+      ],
+      humorous: [
+        { id: 'realisedStanding', label: 'What are we celebrating today, and how did you feel when you realised you\'d have to stand up in front of everyone and actually do this?', type: 'textarea', required: true },
+        { id: 'funniestPreparing', label: 'What has been the funniest or most ridiculous part of preparing for your Bar or Bat Mitzvah?', type: 'textarea', required: true },
+        { id: 'hardestToLearn', label: 'What has been the hardest thing to learn, practise or remember?', type: 'textarea', required: true },
+        { id: 'naggingNeeded', label: 'Who has been helping you prepare, and how much nagging did they have to do?', type: 'textarea', required: true },
+        { id: 'embarrassingChildhood', label: 'What embarrassing story from your childhood would your family be most likely to bring up today?', type: 'textarea', required: true },
+        { id: 'convenientlyForget', label: 'Now that you\'ve officially reached this milestone, what new responsibility are you hoping everyone will conveniently forget about?', type: 'textarea', required: true }
+      ],
+      emotional: [
+        { id: 'meanPersonally', label: 'What does becoming a Bar or Bat Mitzvah mean to you personally, and why is this day important to you?', type: 'textarea', required: true },
+        { id: 'learnedAboutSelf', label: 'What have you learned about yourself, your faith or your place within your family and community during this journey?', type: 'textarea', required: true },
+        { id: 'especiallyImportant', label: 'Who has been especially important in helping and supporting you?', type: 'textarea', required: true },
+        { id: 'momentStayed', label: 'Is there a particular moment during your preparation that has stayed with you?', type: 'textarea', required: true },
+        { id: 'mostProudOf', label: 'What are you most proud of as you reach this milestone?', type: 'textarea', required: true },
+        { id: 'personBecome', label: 'What kind of person do you hope to become as you take this next step in your life?', type: 'textarea', required: true }
+      ],
+      banter: [
+        { id: 'relievedOver', label: 'What exactly are we celebrating today, and how relieved are you that all that preparation is finally over?', type: 'textarea', required: true },
+        { id: 'mostPainful', label: 'What was the most painful, confusing or ridiculous part of learning everything you needed to know?', type: 'textarea', required: true },
+        { id: 'naggingMost', label: 'Who has been nagging you the most during the preparation, and what are they getting away with today?', type: 'textarea', required: true },
+        { id: 'heldOverYou', label: 'What embarrassing childhood story is your family currently holding over you?', type: 'textarea', required: true },
+        { id: 'firstIrresponsible', label: 'Now that you\'re officially becoming a responsible member of the community, what is the first irresponsible thing you\'re planning to do?', type: 'textarea', required: true },
+        { id: 'warningLabel', label: 'If your Bar or Bat Mitzvah came with a warning label, what would it say?', type: 'textarea', required: true }
+      ]
+    },
+
+    // Milestone - Engagement Party
+    'engagement-party': {
+      base: [],
+      showAllToneQuestions: true,
+      serious: [
+        { id: 'firstMetCouple', label: 'How did you first meet the couple, and what was your first impression of each of them?', type: 'textarea', required: true },
+        { id: 'realisedSerious', label: 'When did you first realise that their relationship was becoming something serious?', type: 'textarea', required: true },
+        { id: 'qualitiesEach', label: 'What qualities do they each bring to the relationship that make them well suited to one another?', type: 'textarea', required: true },
+        { id: 'strengthMoment', label: 'What moment or experience best demonstrates the strength of their relationship?', type: 'textarea', required: true },
+        { id: 'supportInfluence', label: 'How have you seen them support or influence each other since they got together?', type: 'textarea', required: true },
+        { id: 'sincereWish', label: 'What sincere wish or piece of advice would you like to give them as they begin this next chapter together?', type: 'textarea', required: true }
+      ],
+      humorous: [
+        { id: 'honestThought', label: 'How did they meet, and what did you honestly think when you first heard they were getting together?', type: 'textarea', required: true },
+        { id: 'funniestWitnessed', label: 'What is the funniest or most ridiculous thing you\'ve witnessed since they became a couple?', type: 'textarea', required: true },
+        { id: 'agreedToTolerate', label: 'What habit, quirk or personality trait does one of them have that the other has somehow agreed to tolerate?', type: 'textarea', required: true },
+        { id: 'definitelyMarrying', label: 'Was there a moment when you thought, "Yep, these two are definitely going to get married"?', type: 'textarea', required: true },
+        { id: 'safeForFamilies', label: 'What embarrassing, awkward or questionable story about either of them can safely be told in front of both families?', type: 'textarea', required: true },
+        { id: 'unhelpfulAdvice', label: 'What piece of deliberately unhelpful relationship advice would you give them before the wedding?', type: 'textarea', required: true }
+      ],
+      emotional: [
+        { id: 'meaningfulMemory', label: 'What is your most meaningful memory of the couple since they first got together?', type: 'textarea', required: true },
+        { id: 'sawDeeplyCared', label: 'When did you first see how deeply they cared for one another?', type: 'textarea', required: true },
+        { id: 'movedInspired', label: 'What have you witnessed in their relationship that has particularly moved or inspired you?', type: 'textarea', required: true },
+        { id: 'enrichedLives', label: 'How has their relationship changed or enriched the lives of the people around them?', type: 'textarea', required: true },
+        { id: 'happyLifeQualities', label: 'What qualities do you think will help them build a happy life together?', type: 'textarea', required: true },
+        { id: 'heartfeltMessage', label: 'If you could give them one heartfelt message to carry with them towards their wedding and beyond, what would you say?', type: 'textarea', required: true }
+      ],
+      banter: [
+        { id: 'everyonesProblem', label: 'How did these two actually get together, and at what point did you realise this was going to become everyone else\'s problem?', type: 'textarea', required: true },
+        { id: 'mostRidiculousCouple', label: 'What is the most ridiculous thing either of them has done since they became a couple?', type: 'textarea', required: true },
+        { id: 'personalityDefects', label: 'Which of their habits or personality defects makes you wonder how they have made it this far?', type: 'textarea', required: true },
+        { id: 'technicallySafe', label: 'What is the most embarrassing story about either of them that is technically safe to tell now that they\'re engaged?', type: 'textarea', required: true },
+        { id: 'relationshipWarning', label: 'If their relationship came with a warning label, what would it say?', type: 'textarea', required: true },
+        { id: 'catastrophicAdvice', label: 'What brutally honest piece of advice would you give them before they make the catastrophic decision to get married?', type: 'textarea', required: true }
+      ]
+    },
+
+    // Milestone - Baby Shower
+    'baby-shower': {
+      base: [],
+      showAllToneQuestions: true,
+      serious: [
+        { id: 'relationshipParents', label: 'What is your relationship to the parents-to-be, and how long have you known them?', type: 'textarea', required: true },
+        { id: 'goodParentQualities', label: 'What qualities do they each have that you think will make them good parents?', type: 'textarea', required: true },
+        { id: 'journeyStoodOut', label: 'What moment during their journey towards becoming parents has stood out to you?', type: 'textarea', required: true },
+        { id: 'familyConfidence', label: 'What have you seen in their relationship that gives you confidence in the family they are about to build?', type: 'textarea', required: true },
+        { id: 'carryIntoParenthood', label: 'Is there a particular memory or experience that you hope they will carry with them into parenthood?', type: 'textarea', required: true },
+        { id: 'sincereWishBaby', label: 'What sincere wish would you like to make for the parents and their new baby?', type: 'textarea', required: true }
+      ],
+      humorous: [
+        { id: 'immediateReaction', label: 'How do you know the parents-to-be, and what was your immediate reaction when you heard they were going to have a baby?', type: 'textarea', required: true },
+        { id: 'organisedParent', label: 'Which of the parents is most likely to be the organised one — and which is going to need adult supervision?', type: 'textarea', required: true },
+        { id: 'babyPutUpWith', label: 'What funny habit, personality trait or questionable life choice do you predict their baby will have to put up with?', type: 'textarea', required: true },
+        { id: 'indicationComing', label: 'What is the funniest or most ridiculous thing either parent has done that might give us some indication of what is coming?', type: 'textarea', required: true },
+        { id: 'leastLikelyFollow', label: 'Which piece of conventional parenting advice are they least likely to follow?', type: 'textarea', required: true },
+        { id: 'unsolicitedAdvice', label: 'What humorous piece of completely unsolicited advice would you give them before the baby arrives?', type: 'textarea', required: true }
+      ],
+      emotional: [
+        { id: 'journeyTogether', label: 'What is your most meaningful memory of the parents-to-be and their journey together?', type: 'textarea', required: true },
+        { id: 'lookingForward', label: 'When did you first realise how much they were looking forward to becoming parents?', type: 'textarea', required: true },
+        { id: 'excitedQualities', label: 'What qualities in them make you particularly excited for this baby to join their family?', type: 'textarea', required: true },
+        { id: 'loveAlready', label: 'Is there a moment that showed you how much love they already have for their unborn child?', type: 'textarea', required: true },
+        { id: 'childGrowKnowing', label: 'What do you hope their child will grow up knowing about the people and family who welcomed them into the world?', type: 'textarea', required: true },
+        { id: 'wishNewFamily', label: 'What heartfelt wish would you like to make for this new family as they begin this next chapter?', type: 'textarea', required: true }
+      ],
+      banter: [
+        { id: 'actuallyInCharge', label: 'Which parent is actually going to be in charge once the baby arrives, and what evidence do you have?', type: 'textarea', required: true },
+        { id: 'panicOrGoogle', label: 'Who is most likely to panic at 3 a.m., and who is most likely to Google the symptoms and make everything considerably worse?', type: 'textarea', required: true },
+        { id: 'babyInherit', label: 'What existing habit, personality flaw or questionable lifestyle choice is the baby about to inherit?', type: 'textarea', required: true },
+        { id: 'responsibleForChild', label: 'What is the funniest thing either parent has ever done that makes you think, "Christ, they\'re responsible for a child now"?', type: 'textarea', required: true },
+        { id: 'babyQuestions', label: 'If the baby could read the parents\' history before being born, what would they immediately have questions about?', type: 'textarea', required: true },
+        { id: 'nobodyKnows', label: 'What brutally honest piece of advice would you give the parents before they discover that absolutely nobody knows what they\'re doing?', type: 'textarea', required: true }
+      ]
+    },
+
+    // Milestone - Retirement Party
+    'retirement-party': {
+      base: [],
+      showAllToneQuestions: true,
+      serious: [
+        { id: 'relationshipRetiree', label: 'What is your relationship to the retiree, and how long have you known or worked with them?', type: 'textarea', required: true },
+        { id: 'roleContribution', label: 'What has their role or contribution to the organisation meant to you and those around them?', type: 'textarea', required: true },
+        { id: 'significantPeriod', label: 'What achievement, project or period during their career stands out as particularly significant?', type: 'textarea', required: true },
+        { id: 'valuedQualities', label: 'What qualities have made them such a valued colleague, leader, mentor or friend?', type: 'textarea', required: true },
+        { id: 'rememberedCelebrated', label: 'Is there a particular moment from their career that you think deserves to be remembered and celebrated?', type: 'textarea', required: true },
+        { id: 'wishNextChapter', label: 'What would you like to wish them as they begin this next chapter of their life?', type: 'textarea', required: true }
+      ],
+      humorous: [
+        { id: 'firstImpression', label: 'How long have you known or worked with the retiree, and what was your first impression of them?', type: 'textarea', required: true },
+        { id: 'funniestWorkingLife', label: 'What is the funniest, strangest or most memorable thing that happened during their working life?', type: 'textarea', required: true },
+        { id: 'missOrEscape', label: 'What workplace habit or personality trait are everyone going to miss — or finally be relieved to escape?', type: 'textarea', required: true },
+        { id: 'questionableCareer', label: 'What is the most questionable decision, mishap or piece of advice from their career that can safely be mentioned tonight?', type: 'textarea', required: true },
+        { id: 'freeTime', label: 'What do you think they will actually do with all their newfound free time?', type: 'textarea', required: true },
+        { id: 'survivingRetirement', label: 'If you could give them one piece of humorous advice for surviving retirement, what would it be?', type: 'textarea', required: true }
+      ],
+      emotional: [
+        { id: 'meantPersonally', label: 'What is your relationship with the retiree, and what has knowing or working with them meant to you personally?', type: 'textarea', required: true },
+        { id: 'careerStayedWithYou', label: 'What moment or experience from their career has stayed with you most strongly?', type: 'textarea', required: true },
+        { id: 'differenceMade', label: 'How have they made a difference to the people they have worked with or the organisation they have been part of?', type: 'textarea', required: true },
+        { id: 'kindnessRemembered', label: 'Is there a particular quality, kindness or act of support from them that you will always remember?', type: 'textarea', required: true },
+        { id: 'missMost', label: 'What do you think their colleagues, friends or family will miss most about having them around?', type: 'textarea', required: true },
+        { id: 'heartfeltWish', label: 'What heartfelt wish would you like to give them as they leave working life behind and begin their next chapter?', type: 'textarea', required: true }
+      ],
+      banter: [
+        { id: 'jobAvoiding', label: 'How long have you known or worked with them, and how much of their actual job do you think they have been successfully avoiding all these years?', type: 'textarea', required: true },
+        { id: 'hasToBeMentioned', label: 'What is the funniest incident, workplace disaster or spectacular bit of nonsense from their career that absolutely has to be mentioned tonight?', type: 'textarea', required: true },
+        { id: 'secretlyDelighted', label: 'What annoying habit or workplace behaviour are you secretly delighted you will never have to deal with again?', type: 'textarea', required: true },
+        { id: 'convenientExcuse', label: 'What is the most suspiciously convenient excuse they have ever used to get out of doing something at work?', type: 'textarea', required: true },
+        { id: 'annoyingAtHome', label: 'What do you reckon they will actually do with retirement — and how long before they start annoying everyone at home?', type: 'textarea', required: true },
+        { id: 'exitInterview', label: 'If retirement came with an employee exit interview, what would their final review say?', type: 'textarea', required: true }
+      ]
+    },
+
+    // Milestone - Achievement Celebration
+    'achievement-celebration': {
+      base: [],
+      showAllToneQuestions: true,
+      serious: [
+        { id: 'whatAchievement', label: 'What is the achievement being celebrated, and what exactly did you accomplish?', type: 'textarea', required: true },
+        { id: 'whyImportant', label: 'What motivated you to pursue this achievement, and why was it important to you?', type: 'textarea', required: true },
+        { id: 'obstaclesOvercome', label: 'What were the biggest challenges, obstacles or setbacks you had to overcome along the way?', type: 'textarea', required: true },
+        { id: 'whoHelped', label: 'Who helped, supported or encouraged you during the journey, and what did their support mean to you?', type: 'textarea', required: true },
+        { id: 'milestoneMeans', label: 'What does achieving this milestone mean to you personally, professionally or to those around you?', type: 'textarea', required: true },
+        { id: 'takeawayNext', label: 'What would you like people to take away from your achievement, and what are you hoping to do next?', type: 'textarea', required: true }
+      ],
+      humorous: [
+        { id: 'skillLuck', label: 'What exactly have you achieved, and how much of it was skill, determination and sheer luck?', type: 'textarea', required: true },
+        { id: 'unexpectedHappened', label: 'What was the funniest, strangest or most unexpected thing that happened while you were trying to achieve it?', type: 'textarea', required: true },
+        { id: 'laughableDisaster', label: 'What went wrong along the way, and which disaster are you now able to laugh about?', type: 'textarea', required: true },
+        { id: 'creditAndHarder', label: 'Who deserves credit for helping you get there — and who made the whole process considerably harder than it needed to be?', type: 'textarea', required: true },
+        { id: 'mightPullOff', label: 'At what point did you think, "Bloody hell, I might actually pull this off"?', type: 'textarea', required: true },
+        { id: 'ridiculousNext', label: 'Now that you\'ve achieved it, what completely unnecessary or ridiculous thing are you going to do next?', type: 'textarea', required: true }
+      ],
+      emotional: [
+        { id: 'reachingMeans', label: 'What is the achievement being celebrated, and what does reaching this milestone mean to you?', type: 'textarea', required: true },
+        { id: 'unseenJourney', label: 'What personal journey, sacrifice or determination lies behind the achievement that people may not have seen?', type: 'textarea', required: true },
+        { id: 'nearlyGaveUp', label: 'Was there a particular moment when you nearly gave up, or when you realised you were going to succeed?', type: 'textarea', required: true },
+        { id: 'supportersKnow', label: 'Who has supported you along the way, and what would you like them to know about the part they played?', type: 'textarea', required: true },
+        { id: 'changedSelf', label: 'How has achieving this changed the way you see yourself, your future or what you are capable of?', type: 'textarea', required: true },
+        { id: 'tellPastSelf', label: 'If you could look back at yourself before you began and say one thing, what would you want to tell that person?', type: 'textarea', required: true }
+      ],
+      banter: [
+        { id: 'howSurprisedManaged', label: 'What exactly have you achieved, and let\'s be honest — how surprised are you that you actually managed it?', type: 'textarea', required: true },
+        { id: 'storyMustTell', label: 'What went spectacularly wrong on the way there, and what story absolutely has to be told tonight?', type: 'textarea', required: true },
+        { id: 'formalApology', label: 'Who helped you achieve it, and who should probably receive some sort of formal apology for having to put up with you?', type: 'textarea', required: true },
+        { id: 'lowestPoint', label: 'What was your lowest point during the process, and how close were you to saying, "Fuck this, I\'m off"?', type: 'textarea', required: true },
+        { id: 'ridiculousPursuit', label: 'What is the most ridiculous thing you did in pursuit of this achievement that, in hindsight, probably wasn\'t necessary?', type: 'textarea', required: true },
+        { id: 'nextChallenge', label: 'Now that you\'ve reached the summit, what is the next completely unnecessary challenge you\'re likely to set yourself?', type: 'textarea', required: true }
+      ]
+    },
+
     // Milestone - Big Birthday
     'big-birthday-30th-50th-etc-': {
       base: [
@@ -598,8 +826,8 @@
     'award-presentation': 'award-presentation',  // Own dedicated questions
     'big-birthday-30th-50th-etc-': 'big-birthday-30th-50th-etc-',
     'anniversary': 'big-birthday-30th-50th-etc-',
-    'graduation': 'big-birthday-30th-50th-etc-',
-    'bar-bat-mitzvah': 'big-birthday-30th-50th-etc-',
+    'graduation': 'graduation',  // Own dedicated questions
+    'bar-bat-mitzvah': 'bar-bat-mitzvah',  // Own dedicated questions
     'quinceañera': 'big-birthday-30th-50th-etc-',
     'housewarming-grand-opening': 'big-birthday-30th-50th-etc-',
     'eulogy': 'eulogy',
@@ -608,10 +836,10 @@
     'wedding-guest-toast': 'wedding-guest-toast',  // Has its own 6 questions per tone!
     'anniversary-party': 'anniversary-party',  // Has its own 6 questions per tone!
     'company-anniversary': 'company-anniversary',  // Own dedicated questions
-    'engagement-party': 'groom',  // Pre-wedding celebration
-    'baby-shower': 'big-birthday-30th-50th-etc-',  // Milestone celebration
-    'retirement-party': 'retirement-farewell',  // Already exists
-    'achievement-celebration': 'big-birthday-30th-50th-etc-',  // Milestone
+    'engagement-party': 'engagement-party',  // Own dedicated questions
+    'baby-shower': 'baby-shower',  // Own dedicated questions
+    'retirement-party': 'retirement-party',  // Own dedicated questions
+    'achievement-celebration': 'achievement-celebration',  // Own dedicated questions
     'tribute-to-mentor': 'retirement-farewell',  // Professional tribute
     'thank-you-speech': 'retirement-farewell',  // Gratitude speech
     'legacy-event': 'retirement-farewell'  // Honor/tribute

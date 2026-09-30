@@ -5,6 +5,7 @@
 
 (function() {
   'use strict';
+  var SUPERSPEECH_API_KEY = '0QG4ts2iQ2puMMIVdOF6flHAojWd9cupsIyqGKV9lZc='; // Shared key for backend webhooks
   
   // ===========================
   // Global State
@@ -246,7 +247,8 @@
     fetch(backendUrl, {
       method: 'POST',
       headers: {
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
+        'X-API-Key': SUPERSPEECH_API_KEY
       },
       body: JSON.stringify(orderData)
     })
@@ -279,15 +281,6 @@
         orders.push(orderData);
         localStorage.setItem('superspeech_orders', JSON.stringify(orders));
       }
-      
-      // Download JSON backup
-      var dataStr = JSON.stringify(orderData, null, 2);
-      var dataBlob = new Blob([dataStr], { type: 'application/json' });
-      var link = document.createElement('a');
-      link.href = URL.createObjectURL(dataBlob);
-      link.download = 'superspeech_order_' + orderData.timestamp.replace(/[:.]/g, '-') + '.json';
-      link.click();
-      console.log('📥 JSON backup downloaded');
       
       // NOW show success message (only after n8n confirms)
       if (window.showSuccessMessage) {
@@ -341,10 +334,19 @@
   // ===========================
   
   function loadUserDashboard(user) {
-    // Try to load from Firebase via backend (with timeout)
-    var fetchPromise = fetch('https://superspeech-backend.onrender.com/api/dashboard/' + encodeURIComponent(user.email), {
-      timeout: 5000
-    })
+    // Try to load from Firebase via backend (with timeout).
+    // Sends the Netlify Identity JWT so the backend can verify this user
+    // owns the email being requested - no extra login needed.
+    var fetchPromise = Promise.resolve(user && user.jwt ? user.jwt() : null)
+      .then(function(token) {
+        var headers = {};
+        if (token) {
+          headers['Authorization'] = 'Bearer ' + token;
+        }
+        return fetch('https://superspeech-backend.onrender.com/api/dashboard/' + encodeURIComponent(user.email), {
+          headers: headers
+        });
+      })
       .then(function(response) {
         if (!response.ok) throw new Error('API error');
         return response.json();
@@ -862,7 +864,7 @@
       
       fetch('https://superspeech-backend.onrender.com/api/webhooks/edit-request', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: { 'Content-Type': 'application/json', 'X-API-Key': SUPERSPEECH_API_KEY },
         body: JSON.stringify({
           speechId: speech.id,
           originalSpeech: speech.speechContent || speech.speech,
@@ -906,11 +908,13 @@
           submitBtn.disabled = newRemaining <= 0;
           submitBtn.textContent = 'Submit Edit Request';
         } else {
-          throw new Error((result.data && result.data.error) || 'Request failed');
+          throw new Error((result.data && (result.data.message || result.data.error)) || 'Request failed');
         }
       })
       .catch(function(err) {
-        statusEl.textContent = 'Something went wrong sending your edit request. Please try again or email hello@superspeech.biz';
+        statusEl.textContent = (err && err.message && err.message !== 'Request failed')
+          ? err.message
+          : 'Something went wrong sending your edit request. Please try again or email hello@superspeech.biz';
         submitBtn.disabled = remaining <= 0;
         submitBtn.textContent = 'Submit Edit Request';
         console.error('Edit request failed:', err);

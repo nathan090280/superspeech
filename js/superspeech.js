@@ -5,6 +5,7 @@
 
 (function() {
   'use strict';
+  var SUPERSPEECH_API_KEY = '0QG4ts2iQ2puMMIVdOF6flHAojWd9cupsIyqGKV9lZc='; // Shared key for backend webhooks
   
   // ===========================
   // Occasion Data Structure
@@ -1313,17 +1314,6 @@
     
     // Also save locally for backup
     console.log('Order data:', data);
-    
-    // Create downloadable JSON file
-    var dataStr = JSON.stringify(data, null, 2);
-    var dataBlob = new Blob([dataStr], { type: 'application/json' });
-    var link = document.createElement('a');
-    link.href = URL.createObjectURL(dataBlob);
-    link.download = 'superspeech_order_' + data.timestamp.replace(/[:.]/g, '-') + '.json';
-    
-    // Auto-download submission for your records
-    link.click();
-    
     console.log('Order saved locally');
   }
   
@@ -1399,7 +1389,7 @@
       // customer + business copy, and logs it to dashboard Messages
       fetch('https://superspeech-backend.onrender.com/api/webhooks/contact-form', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: { 'Content-Type': 'application/json', 'X-API-Key': SUPERSPEECH_API_KEY },
         body: JSON.stringify(data)
       })
       .then(function(response) {

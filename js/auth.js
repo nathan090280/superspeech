@@ -11,6 +11,7 @@
   // ===========================
   
   var currentUser = null;
+  var currentMessages = [];
   var pendingOrderData = null;
   var currentOrders = [];
   
@@ -491,6 +492,7 @@
     // Display messages if there's a messages section
     var messagesSection = document.getElementById('messagesSection');
     if (messagesSection) {
+      currentMessages = messages;
       if (messages.length === 0) {
         messagesSection.innerHTML = '<p class="no-data">No messages yet.</p>';
       } else {
@@ -501,17 +503,29 @@
         
         messages.forEach(function(msg) {
           var date = new Date(msg.createdAt).toLocaleDateString();
+          var linkText = msg.subject || ((msg.body || 'Message').substring(0, 70) + ((msg.body || '').length > 70 ? '...' : ''));
           messagesHTML += '<div class="message-item">';
           messagesHTML += '  <div class="message-header">';
           messagesHTML += '    <span class="message-from"><strong>From:</strong> ' + msg.from + '</span>';
           messagesHTML += '    <span class="message-date">' + date + '</span>';
           messagesHTML += '  </div>';
-          messagesHTML += '  <div class="message-body">';
-          messagesHTML += '    <p>' + msg.body + '</p>';
-          messagesHTML += '  </div>';
+          messagesHTML += '  <a href="#" class="message-link" data-message-id="' + msg.id + '">💬 ' + linkText + '</a>';
           messagesHTML += '</div>';
         });
         messagesSection.innerHTML = messagesHTML;
+        
+        // Wire up message links to open the viewer
+        var messageLinks = messagesSection.querySelectorAll('.message-link');
+        messageLinks.forEach(function(link) {
+          link.addEventListener('click', function(e) {
+            e.preventDefault();
+            var msgId = this.getAttribute('data-message-id');
+            var msg = currentMessages.find(function(m) { return m.id === msgId; });
+            if (msg) {
+              openMessageViewer(msg);
+            }
+          });
+        });
       }
     }
   }
@@ -777,6 +791,35 @@
     return null;
   }
   
+  // ===========================
+  // Message Viewer Modal
+  // ===========================
+
+  function openMessageViewer(msg) {
+    var modal = document.getElementById('messageViewerModal');
+    var title = document.getElementById('messageViewerTitle');
+    var meta = document.getElementById('messageViewerMeta');
+    var body = document.getElementById('messageViewerBody');
+    var closeBtn = document.getElementById('messageViewerClose');
+
+    if (!modal || !body) return;
+
+    title.textContent = msg.subject || 'Message';
+    meta.textContent = 'From: ' + (msg.from || 'SuperSpeech') + ' • ' + new Date(msg.createdAt).toLocaleString();
+    body.textContent = msg.body || msg.message || 'No message content.';
+
+    closeBtn.onclick = function() {
+      modal.style.display = 'none';
+    };
+    modal.onclick = function(e) {
+      if (e.target === modal) {
+        modal.style.display = 'none';
+      }
+    };
+
+    modal.style.display = 'flex';
+  }
+
   function openEditRequestModal(speech) {
     var modal = document.getElementById('editRequestModal');
     var remainingEl = document.getElementById('editsRemainingText');

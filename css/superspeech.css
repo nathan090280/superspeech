@@ -881,6 +881,25 @@ iframe#netlify-identity-widget {
   z-index: 1003;
 }
 
+/* Message viewer renders above the dashboard */
+#messageViewerModal {
+  z-index: 1004;
+}
+
+/* Dashboard messages render as links that open the viewer */
+.message-link {
+  display: block;
+  color: var(--brand-purple);
+  font-weight: 600;
+  text-decoration: none;
+  margin-top: 0.5rem;
+  word-break: break-word;
+}
+
+.message-link:hover {
+  text-decoration: underline;
+}
+
 .modal-content .edits-remaining {
   font-weight: 600;
   color: var(--brand-purple);

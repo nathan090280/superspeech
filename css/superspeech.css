@@ -1154,3 +1154,33 @@ iframe#netlify-identity-widget {
   background: #5568d3;
   transform: translateY(-2px);
 }
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  color: #777;
+  font-size: 0.9rem;
+}
+
+footer a {
+  color: #667eea;
+  text-decoration: none;
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.4rem 1.1rem;
+  max-width: 900px;
+  margin: 0 auto 1.25rem;
+}
+
+.footer-links a {
+  font-size: 0.85rem;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}

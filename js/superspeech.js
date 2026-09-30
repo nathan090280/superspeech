@@ -1450,6 +1450,24 @@
   document.addEventListener('DOMContentLoaded', function() {
     initPricingCards();
     initContactForm();
+
+    // Pre-select the occasion when arriving from a landing page (?occasion=slug)
+    var wantedOccasion = new URLSearchParams(window.location.search).get('occasion');
+    if (wantedOccasion && categorySelect && specificOccasionSelect) {
+      for (var catKey in occasions) {
+        var matched = occasions[catKey].types.some(function(t) {
+          var slug = occasionSlugs[t] || t.toLowerCase().replace(/[^a-z0-9]+/g, '-');
+          return slug === wantedOccasion;
+        });
+        if (matched) {
+          categorySelect.value = catKey;
+          categorySelect.dispatchEvent(new Event('change', { bubbles: true }));
+          specificOccasionSelect.value = wantedOccasion;
+          specificOccasionSelect.dispatchEvent(new Event('change', { bubbles: true }));
+          break;
+        }
+      }
+    }
   });
   
   // Expose functions to global scope for auth.js

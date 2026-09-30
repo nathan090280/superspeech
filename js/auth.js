@@ -624,12 +624,28 @@
   // ===========================
   
   document.addEventListener('DOMContentLoaded', function() {
+    // Netlify Identity email links (password reset, signup confirmation,
+    // invites) arrive with tokens in the URL hash - open the right form
+    var urlHash = window.location.hash;
+    if (urlHash.indexOf('recovery_token') !== -1) {
+      netlifyIdentity.open('recovery');
+      return;
+    }
+    if (urlHash.indexOf('invite_token') !== -1) {
+      netlifyIdentity.open('signup');
+      return;
+    }
+    if (urlHash.indexOf('confirmation_token') !== -1) {
+      netlifyIdentity.open('login');
+      return;
+    }
+
     // Check if user is already logged in
     var user = netlifyIdentity.currentUser();
     if (user) {
       handleUserLogin(user);
     }
-    
+
     // Check if we're on dashboard page
     if (window.location.hash === '#dashboard') {
       if (user) {

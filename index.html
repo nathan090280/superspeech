@@ -437,6 +437,15 @@
     </div>
   </div>
   
+  <!-- Stripe Checkout Modal -->
+  <div id="stripeCheckoutModal" class="modal" style="display:none;">
+    <div class="modal-content stripe-checkout-content">
+      <span class="modal-close" id="stripeCheckoutClose">&times;</span>
+      <h2>Complete Your Order</h2>
+      <div id="stripe-checkout"></div>
+    </div>
+  </div>
+
   <!-- Speech Viewer Modal -->
   <div id="speechViewerModal" class="modal" style="display:none;">
     <div class="modal-content speech-viewer">
@@ -523,6 +532,7 @@
 
   <!-- Netlify Identity Widget -->
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  <script src="https://js.stripe.com/v3/"></script>
   
   <!-- PDF generation for speech downloads -->
   <script src="js/vendor/jspdf.umd.min.js" defer></script>

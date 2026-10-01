@@ -6,6 +6,7 @@
 (function() {
   'use strict';
   var SUPERSPEECH_API_KEY = '0QG4ts2iQ2puMMIVdOF6flHAojWd9cupsIyqGKV9lZc='; // Shared key for backend webhooks
+  var STRIPE_PUBLISHABLE_KEY = 'PENDING_PK'; // Stripe publishable key
   
   // ===========================
   // Global State
@@ -236,6 +237,49 @@
     // Submit to Netlify Forms with user data
     submitOrder(orderData);
   }
+
+  // ===========================
+  // Stripe Embedded Checkout
+  // ===========================
+
+  function openStripeCheckout(clientSecret) {
+    var modal = document.getElementById('stripeCheckoutModal');
+    var submittingMsg = document.getElementById('submittingMessage');
+    if (submittingMsg) submittingMsg.style.display = 'none';
+
+    if (typeof Stripe === 'undefined' || STRIPE_PUBLISHABLE_KEY === 'PENDING_PK') {
+      alert('Payment is not configured yet — please contact hello@superspeech.biz');
+      return;
+    }
+
+    modal.style.display = 'block';
+    var stripe = Stripe(STRIPE_PUBLISHABLE_KEY);
+    stripe.initEmbeddedCheckout({ clientSecret: clientSecret })
+      .then(function(checkout) {
+        checkout.mount('#stripe-checkout');
+      })
+      .catch(function(err) {
+        console.error('Stripe checkout failed:', err);
+        alert('Could not load payment form — please try again.');
+        modal.style.display = 'none';
+      });
+  }
+
+  var stripeCheckoutClose = document.getElementById('stripeCheckoutClose');
+  if (stripeCheckoutClose) {
+    stripeCheckoutClose.addEventListener('click', function() {
+      document.getElementById('stripeCheckoutModal').style.display = 'none';
+      // Closing without paying leaves the order unpaid - reshow the form
+      var form = document.getElementById('speechForm');
+      var submitButton = form ? form.querySelector('button[type="submit"]') : null;
+      if (submitButton) {
+        submitButton.disabled = false;
+        submitButton.textContent = 'Submit Order';
+        submitButton.style.opacity = '1';
+        submitButton.style.cursor = 'pointer';
+      }
+    });
+  }
   
   function submitOrder(orderData) {
     // Backend API URL - Direct to backend (n8n workflow not yet activated)
@@ -272,7 +316,13 @@
     })
     .then(function(data) {
       console.log('✅ Order submitted to backend successfully:', data);
-      
+
+      // Payment required: open the embedded Stripe checkout
+      if (data && data.requiresPayment && data.clientSecret) {
+        openStripeCheckout(data.clientSecret);
+        return;
+      }
+
       // Save to user's metadata if logged in
       if (orderData.userId) {
         saveOrderToUserMetadata(orderData);

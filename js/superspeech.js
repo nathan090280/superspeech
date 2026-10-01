@@ -1451,6 +1451,15 @@
     initPricingCards();
     initContactForm();
 
+    // Returning from Stripe checkout - show the order success message
+    var pageParams = new URLSearchParams(window.location.search);
+    if (pageParams.get('payment') === 'success') {
+      if (typeof showSuccessMessage === 'function') showSuccessMessage();
+      if (window.history && history.replaceState) {
+        history.replaceState(null, '', '/');
+      }
+    }
+
     // Pre-select the occasion when arriving from a landing page (?occasion=slug)
     var wantedOccasion = new URLSearchParams(window.location.search).get('occasion');
     if (wantedOccasion && categorySelect && specificOccasionSelect) {

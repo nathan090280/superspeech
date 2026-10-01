@@ -6,7 +6,7 @@
 (function() {
   'use strict';
   var SUPERSPEECH_API_KEY = '0QG4ts2iQ2puMMIVdOF6flHAojWd9cupsIyqGKV9lZc='; // Shared key for backend webhooks
-  var STRIPE_PUBLISHABLE_KEY = 'PENDING_PK'; // Stripe publishable key
+  var STRIPE_PUBLISHABLE_KEY = 'pk_live_51UJtcjRJyyjdKutNw3Ht7XxRln4mODuxaxImmULT9JIZSj0cPXEGnELJW5grkxFkVdRnDlNjNix6TOvYuD5zWrlW00F3dZlnm0'; // Stripe publishable key (LIVE)
   
   // ===========================
   // Global State
